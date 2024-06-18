@@ -2,6 +2,7 @@ import { Box, Container, Image, Text } from "@chakra-ui/react";
 import Fon from "../../assets/image/fone.png";
 import Search from "./Search";
 import Categoria from "./Categoria";
+import TarixiyJoylar from "./TarixiyJoylar";
 
 export default function HomePage() {
   return (
@@ -32,6 +33,9 @@ export default function HomePage() {
       </Box>
 
       {/* <Categoria /> */}
+      <Container maxW="1500px">
+         <TarixiyJoylar />
+         </Container>
     </>
   );
 }

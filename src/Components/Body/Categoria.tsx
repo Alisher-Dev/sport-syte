@@ -1,5 +1,6 @@
+import React from "react";
 import { Box, Container, Text } from "@chakra-ui/react";
-import IconTarix from "../../assets/icon/IconTarix.svg?react";
+// import {ReactComponent as IconTarix} from "../../assets/icon/IconTarix.svg";
 
 export default function Categoria() {
   return (
@@ -24,7 +25,7 @@ export default function Categoria() {
             bg="rgba(0, 148, 255, 0.75)"
           >
             <Box w="100%" h="100%" bg="white">
-              <IconTarix />
+              {/* <IconTarix /> */}
             </Box>
           </Box>
         </Box>
