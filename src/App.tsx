@@ -4,6 +4,7 @@ import { Footer } from "./Components/Footer/Footer";
 import HomePage from "./Components/Body/HomePage";
 import { YaratilishTarixi } from "./Components/YaratilishTarixi/YaratilishTarixi";
 import { Yangiliklar } from "./Components/Yangiliklar/Yangiliklar";
+import Kompleks from "./Components/Kompleks/Kompleks";
 
 function App() {
   return (
@@ -13,6 +14,7 @@ function App() {
         <Route path="/" element={<HomePage />} />
         <Route path="/yaratilish" element={<YaratilishTarixi />} />
         <Route path="/yangilik" element={<Yangiliklar />} />
+        <Route path="/kompleks" element={<Kompleks />} />
       </Routes>
       <Footer />
     </>

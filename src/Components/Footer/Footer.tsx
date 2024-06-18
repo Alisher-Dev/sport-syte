@@ -27,7 +27,12 @@ function Footer() {
           <Box as="nav" display="flex" alignItems="center" gap="30px">
             {navbar.map((el) => (
               <Link key={el.id} to={el.url}>
-                <Text fontSize="20px" color="rgba(72, 72, 72, 0.7)">
+                <Text
+                  fontSize="20px"
+                  _hover={{ color: "rgba(0, 148, 255, 0.7)" }}
+                  color="rgba(72, 72, 72, 0.7)"
+                  transition="all 0.2s ease"
+                >
                   {el.title}
                 </Text>
               </Link>
@@ -69,3 +74,28 @@ function Footer() {
 }
 
 export { Footer };
+
+//yangiliklar
+// {
+//   id: number,
+//   updated_at: Date,
+//   created_at: Date,
+//   title_uz: string,
+//   title_ru: string,
+//   desc_uz: string,
+//   desc_ru: string,
+//   img: string, // img or video
+// }
+
+//viloyatlar
+// {
+//   id: number,
+//   updated_at: Date,
+//   created_at: Date,
+//   title_uz: string,
+//   title_ru: string,
+//   desc_uz: string,
+//   desc_ru: string,
+//   viloyatImg: string, // brat b viloyat rasimi ilije xorazm ili tashkent t.d.p
+//   teacherImg: string  // a berda ustozlar rasimi agar yakshi varianting bolsa shundat ok ;)
+// }

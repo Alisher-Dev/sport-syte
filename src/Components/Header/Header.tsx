@@ -51,7 +51,8 @@ export default function Header() {
               <Link key={el.id} to={el.url}>
                 <Text
                   fontSize="18px"
-                  transition="all 0.4s ease"
+                  _hover={{ color: "rgba(0, 148, 255, 0.7)" }}
+                  transition="all 0.2s ease"
                   color={scrollY ? "rgb(96, 96, 96)" : "rgb(180, 180, 180)"}
                 >
                   {el.title}
