@@ -1,0 +1,16 @@
+.cardHover>.itemBox:hover{
+    width: 100%;
+    height: 100%;
+    
+}
+
+.cardHover:hover{
+    background: rgba(0,0,0,0);
+	color: #3a7999;
+	box-shadow: inset 0 0 0 3px #3a7999;
+
+}
+
+.itemBox{
+     transition: all 0.5s ease;
+}
