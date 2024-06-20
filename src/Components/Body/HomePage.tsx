@@ -32,7 +32,8 @@ export default function HomePage() {
         </Container>
       </Box>
 
-      {/* <Categoria /> */}
+      <Categoria />
+     
       <Container maxW="1500px">
          <TarixiyJoylar />
          </Container>
