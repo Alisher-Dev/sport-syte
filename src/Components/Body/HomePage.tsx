@@ -34,8 +34,8 @@ export default function HomePage() {
 
       {/* <Categoria /> */}
       <Container maxW="1500px">
-         <TarixiyJoylar />
-         </Container>
+        <TarixiyJoylar />
+      </Container>
     </>
   );
 }

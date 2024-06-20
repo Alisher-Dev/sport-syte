@@ -3,7 +3,13 @@ import { IoSearchSharp } from "react-icons/io5";
 export default function Search() {
   return (
     <>
-      <Box margin='60px 0' display="flex" gap="20px" p="0 100px">
+      <Box
+        margin="60px 0"
+        cursor="pointer"
+        display="flex"
+        gap="20px"
+        p="0 100px"
+      >
         <Box
           w="100%"
           borderRadius="10px"

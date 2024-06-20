@@ -1,6 +1,4 @@
-import React from "react";
 import { Box, Container, Text } from "@chakra-ui/react";
-// import {ReactComponent as IconTarix} from "../../assets/icon/IconTarix.svg";
 
 export default function Categoria() {
   return (
