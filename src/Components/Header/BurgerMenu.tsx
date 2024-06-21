@@ -20,7 +20,7 @@ function BurgerMenu() {
     { id: 2, title: "YRATILISH", url: "/yaratilish" },
     { id: 3, title: "YANGILIK", url: "/yangilik" },
     { id: 4, title: "KOMPLECS", url: "/kompleks" },
-    { id: 4, title: "VILOYATLAR", url: "/viloyat" },
+    { id: 5, title: "VILOYATLAR", url: "/viloyat" },
   ];
 
   return (

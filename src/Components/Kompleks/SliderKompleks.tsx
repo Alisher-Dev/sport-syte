@@ -10,6 +10,7 @@ import { FreeMode, Pagination } from "swiper/modules";
 import { Box, Image, Text } from "@chakra-ui/react";
 import { Dispatch, SetStateAction } from "react";
 import { Navigation } from "swiper/modules";
+import { mashklar } from "./mashk";
 
 interface TypeSliderKompanent {
   dataAdd: Dispatch<SetStateAction<string>>;
@@ -17,29 +18,6 @@ interface TypeSliderKompanent {
 }
 
 export default function SliderKompleks({ dataAdd, size }: TypeSliderKompanent) {
-  const mashklar = [
-    {
-      id: 1,
-      iframe: `https://www.youtube.com/embed/1FLBqUCcoSo?si=KtQPmDGLqwJoLvP9`,
-    },
-    {
-      id: 2,
-      iframe: `https://www.youtube.com/embed/LLfWPLiPtck?si=d6F2mDNil3ydM9uQ`,
-    },
-    {
-      id: 3,
-      iframe: `https://www.youtube.com/embed/LLfWPLiPtck?si=d6F2mDNil3ydM9uQ`,
-    },
-    {
-      id: 4,
-      iframe: `https://www.youtube.com/embed/1FLBqUCcoSo?si=KtQPmDGLqwJoLvP9`,
-    },
-    {
-      id: 5,
-      iframe: `https://www.youtube.com/embed/1FLBqUCcoSo?si=KtQPmDGLqwJoLvP9`,
-    },
-  ];
-
   return (
     <Swiper
       slidesPerView={size || 3}
