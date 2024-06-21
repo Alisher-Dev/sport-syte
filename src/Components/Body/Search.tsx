@@ -8,7 +8,7 @@ export default function Search() {
         cursor="pointer"
         display="flex"
         gap="20px"
-        p="0 100px"
+        p={{base:'0',lg:"0 100px"}}
       >
         <Box
           w="100%"
@@ -20,10 +20,10 @@ export default function Search() {
           border="1px solid rgba(250,250,250,.4)"
           display="flex"
         >
-          <IoSearchSharp fontSize="40px" color="rgba(217, 217, 217, 0.5)" />
+          <IoSearchSharp fontSize='30px' color="rgba(217, 217, 217, 0.5)" />
           <Input
             color="white"
-            fontSize="20px"
+            fontSize={{xl:"20px",md:'15px',sm:'12px'}}
             placeholder="Basic usage"
             variant="unset"
             bg="transparent"
@@ -36,7 +36,7 @@ export default function Search() {
           border="1px solid rgba(250,250,250,.4)"
           backdropFilter="blur(5px)"
           alignItems="center"
-          display="flex"
+          display={{base:'none',md:'flex'}}
         >
           <IoSearchSharp fontSize="40px" color="rgba(217, 217, 217, 0.5)" />
           <Button

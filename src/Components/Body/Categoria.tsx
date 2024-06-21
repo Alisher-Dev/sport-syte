@@ -1,9 +1,14 @@
-import { Box, Container, Text } from "@chakra-ui/react";
+import React from "react";
+import { Box, Container, Image, Text } from "@chakra-ui/react";
+import IconTarix from "../../assets/icon/IconTarix.svg";
+import CategoriasCard from "../Cards/CategoriasCard";
+
+
 
 export default function Categoria() {
   return (
     <>
-      <Text
+          <Text
         color="#484848"
         fontFamily="Inter"
         fontWeight="600"
@@ -11,23 +16,16 @@ export default function Categoria() {
         fontSize="54px"
         textAlign="center"
       >
-        Sizni qiziqtirishi mumkin
+        Yaratilish tarixi
       </Text>
       <Container maxW="1500px">
-        <Box>
-          <Box
-            w="300px"
-            p="20px 0"
-            h="300px"
-            borderRadius="8px"
-            bg="rgba(0, 148, 255, 0.75)"
-          >
-            <Box w="100%" h="100%" bg="white">
-              {/* <IconTarix /> */}
-            </Box>
-          </Box>
-        </Box>
-      </Container>
+      <Box display='flex' gap='20px' gridTemplateColumns='repeat(4,1fr)'>
+     <CategoriasCard title={"Yaratilish Tarixi"} imageUrl={IconTarix} desc="150 Listing"     />
+     <CategoriasCard title={"Yaratilish Tarixi"} imageUrl={IconTarix} desc="150 Listing"     />
+     <CategoriasCard title={"Yaratilish Tarixi"} imageUrl={IconTarix} desc="150 Listing"     />
+     <CategoriasCard title={"Yaratilish Tarixi"} imageUrl={IconTarix} desc="150 Listing"     />
+     </Box>
+     </Container>
     </>
   );
 }

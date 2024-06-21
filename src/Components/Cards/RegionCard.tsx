@@ -46,18 +46,18 @@ const Card: React.FC<CardProps> = ({ title, content, imageUrl }: CardProps) => {
           left='0'
           zIndex='5'
           bgGradient='linear(to-b, rgba(153, 153, 153, 0), rgba(255, 255, 255, 1))'
-          _hover={{ bgGradient: 'linear(to-b, rgba(44, 44, 44, 0.329), rgba(79, 79, 79))' }}
+          _hover={{ bgGradient: 'linear(to-b, rgba(153, 153, 153, 0), rgba(255, 255, 255, 1)))' ,h:'100%'}}
         ></Box>
       </Box>
 
       <Modal  isOpen={isOpen} onClose={onClose}>
         <ModalOverlay  />
-        <ModalContent>
+        <ModalContent minW='1000px'>
           <ModalHeader >{title}</ModalHeader>
           <ModalCloseButton />
           <ModalBody  display='flex'>
             
-            <Text w='1300px'>{content}</Text>
+            <Text w='1800px'>{content}</Text>
           </ModalBody>
 
           <ModalFooter>

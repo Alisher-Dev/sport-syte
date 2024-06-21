@@ -42,12 +42,13 @@ export default function Header() {
         <Container
           justifyContent="space-between"
           display="flex"
-          padding="10px"
-          maxW="1500px"
+          padding={{md:"10px",base:'10px 0'}}
+          maxW={{base:"200px",'2xl':"1500px",xl:'1300px',lg:'900px',md:'700px',sm:'400px'}}
         >
           <Link to="/">
-            <Image w="60px" h="60px" src={Logo} />
+            <Image w={{md:"60px",sm:'30' }}h={{md:"60px",base:'30' }} src={Logo} />
           </Link>
+
           <Box display="flex" alignItems="center" gap="20px">
             <Box
               as="span"
@@ -68,11 +69,12 @@ export default function Header() {
                 </Link>
               ))}
             </Box>
+
             <Select
               color={scrollY ? "rgb(96, 96, 96)" : "rgb(180, 180, 180)"}
               bg="transparent"
               transition="all 0.4s ease"
-              w="80px"
+              w={{base:'70px',md:"80px"}}
               height="20px"
               variant="ghost"
             >
