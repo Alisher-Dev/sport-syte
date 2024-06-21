@@ -1,5 +1,5 @@
 import { Box, Text } from "@chakra-ui/react";
-import Card from "../Cards/RCard";
+import Card from "../Cards/GlobalRegionCard";
 
 export default function TarixiyJoylar() {
   return (

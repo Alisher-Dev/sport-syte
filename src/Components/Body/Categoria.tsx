@@ -1,14 +1,11 @@
-import React from "react";
-import { Box, Container, Image, Text } from "@chakra-ui/react";
+import { Box, Container, Text } from "@chakra-ui/react";
 import IconTarix from "../../assets/icon/IconTarix.svg";
 import CategoriasCard from "../Cards/CategoriasCard";
-
-
 
 export default function Categoria() {
   return (
     <>
-          <Text
+      <Text
         color="#484848"
         fontFamily="Inter"
         fontWeight="600"
@@ -19,13 +16,33 @@ export default function Categoria() {
         Yaratilish tarixi
       </Text>
       <Container maxW="1500px">
-      <Box display='flex' gap='20px' gridTemplateColumns='repeat(4,1fr)'>
-     <CategoriasCard title={"Yaratilish Tarixi"} imageUrl={IconTarix} desc="150 Listing"     />
-     <CategoriasCard title={"Yaratilish Tarixi"} imageUrl={IconTarix} desc="150 Listing"     />
-     <CategoriasCard title={"Yaratilish Tarixi"} imageUrl={IconTarix} desc="150 Listing"     />
-     <CategoriasCard title={"Yaratilish Tarixi"} imageUrl={IconTarix} desc="150 Listing"     />
-     </Box>
-     </Container>
+        <Box
+          gap="20px"
+          display="grid"
+          gridTemplateColumns="repeat(auto-fill, minmax(300px, 1fr))"
+        >
+          <CategoriasCard
+            title={"Yaratilish Tarixi"}
+            imageUrl={IconTarix}
+            desc="150 Listing"
+          />
+          <CategoriasCard
+            title={"Yaratilish Tarixi"}
+            imageUrl={IconTarix}
+            desc="150 Listing"
+          />
+          <CategoriasCard
+            title={"Yaratilish Tarixi"}
+            imageUrl={IconTarix}
+            desc="150 Listing"
+          />
+          <CategoriasCard
+            title={"Yaratilish Tarixi"}
+            imageUrl={IconTarix}
+            desc="150 Listing"
+          />
+        </Box>
+      </Container>
     </>
   );
 }
