@@ -7,27 +7,40 @@ function YaratilishTarixi() {
     <Box mt="100px">
       <Container maxW="1500px" m="0 auto">
         <Text
-          fontSize="48px"
+          fontSize={{ base: "28px", md: "32px", lg: "40px", xl: "48px" }}
           textAlign="center"
           color="rgb(72, 72, 72)"
           fontWeight="600"
         >
           Yaratilish Tarixi
         </Text>
-        <Text fontSize="32px" color="rgb(115, 114, 114)" textAlign="center">
+        <Text
+          fontSize={{ base: "18px", md: "22px", xl: "28px" }}
+          color="rgb(115, 114, 114)"
+          textAlign="center"
+        >
           Explore New place, food, culture around the world and many more
         </Text>
-        <Box mt="80px" display="flex" gap="20px">
+        <Box
+          mt="80px"
+          display="flex"
+          flexDirection={{ base: "column", lg: "unset" }}
+          gap="20px"
+        >
           <Image
             src={User}
             alt="error in image"
-            w="800px"
+            w={{ base: "100%", lg: "50%" }}
+            maxH={{ base: "500px", md: "100%" }}
             objectFit="cover"
-            h="540px"
             borderRadius="10px"
           />
           <Box>
-            <Text fontSize="20px" fontWeight="600" color="rgb(115, 114, 114)">
+            <Text
+              fontSize={{ base: "12px", md: "14px", lg: "16px", xl: "20px" }}
+              fontWeight="600"
+              color="rgb(115, 114, 114)"
+            >
               Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic
               rerum, eos ratione fuga dicta qui recusandae soluta porro cumque
               repudiandae dignissimos labore est quibusdam dolorem facere
@@ -36,7 +49,7 @@ function YaratilishTarixi() {
               necessitatibus voluptate rem atque delectus autem omnis.
             </Text>
             <Text
-              fontSize="20px"
+              fontSize={{ base: "12px", md: "14px", lg: "16px", xl: "20px" }}
               fontWeight="600"
               color="rgb(115, 114, 114)"
               mt="15px"
@@ -49,7 +62,7 @@ function YaratilishTarixi() {
               necessitatibus voluptate rem atque delectus autem omnis.
             </Text>
             <Text
-              fontSize="20px"
+              fontSize={{ base: "12px", md: "14px", lg: "16px", xl: "20px" }}
               fontWeight="600"
               color="rgb(115, 114, 114)"
               mt="15px"
@@ -64,9 +77,18 @@ function YaratilishTarixi() {
           </Box>
         </Box>
 
-        <Box mt="80px" display="flex" gap="20px">
+        <Box
+          mt="80px"
+          display="flex"
+          flexDirection={{ base: "column-reverse", lg: "unset" }}
+          gap="20px"
+        >
           <Box>
-            <Text fontSize="20px" fontWeight="600" color="rgb(115, 114, 114)">
+            <Text
+              fontSize={{ base: "12px", md: "14px", lg: "16px", xl: "20px" }}
+              fontWeight="600"
+              color="rgb(115, 114, 114)"
+            >
               Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic
               rerum, eos ratione fuga dicta qui recusandae soluta porro cumque
               repudiandae dignissimos labore est quibusdam dolorem facere
@@ -75,7 +97,7 @@ function YaratilishTarixi() {
               necessitatibus voluptate rem atque delectus autem omnis.
             </Text>
             <Text
-              fontSize="20px"
+              fontSize={{ base: "12px", md: "14px", lg: "16px", xl: "20px" }}
               fontWeight="600"
               color="rgb(115, 114, 114)"
               mt="15px"
@@ -88,7 +110,7 @@ function YaratilishTarixi() {
               necessitatibus voluptate rem atque delectus autem omnis.
             </Text>
             <Text
-              fontSize="20px"
+              fontSize={{ base: "12px", md: "14px", lg: "16px", xl: "20px" }}
               fontWeight="600"
               color="rgb(115, 114, 114)"
               mt="15px"
@@ -104,13 +126,21 @@ function YaratilishTarixi() {
           <Image
             src={User}
             alt="error in image"
-            w="800px"
+            w={{ base: "100%", lg: "50%" }}
+            maxH={{ base: "500px", md: "100%" }}
             objectFit="cover"
-            h="540px"
             borderRadius="10px"
           />
         </Box>
-        <Image src={Trenerovka} w="100%" alt="error in img" mt="80px" />
+        <Image
+          src={Trenerovka}
+          w="100%"
+          minH="300px"
+          objectFit="cover"
+          borderRadius="10px"
+          alt="error in img"
+          mt="80px"
+        />
       </Container>
     </Box>
   );
