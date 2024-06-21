@@ -8,9 +8,10 @@ import Facebook from "../../assets/icon/icons8-facebook.svg";
 function Footer() {
   const navbar = [
     { id: 1, title: "HOME", url: "/" },
-    { id: 2, title: "EXPLORE", url: "/" },
-    { id: 3, title: "REVIEW", url: "/" },
-    { id: 4, title: "CONTACT", url: "/" },
+    { id: 2, title: "YRATILISH", url: "/yaratilish" },
+    { id: 3, title: "YANGILIK", url: "/yangilik" },
+    { id: 4, title: "KOMPLECS", url: "/kompleks" },
+    { id: 5, title: "VILOYATLAR", url: "/viloyat" },
   ];
 
   const more = [
