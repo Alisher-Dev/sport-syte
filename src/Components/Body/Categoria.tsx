@@ -4,6 +4,7 @@ import IconTarix from "../../assets/icon/IconTarix.svg";
 import CategoriasCard from "../Cards/CategoriasCard";
 
 
+
 export default function Categoria() {
   return (
     <>

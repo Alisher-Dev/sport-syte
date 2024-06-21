@@ -12,16 +12,16 @@ export default function HomePage() {
         alignItems="center"
         position="relative"
         overflow="hidden"
-        p="120px 0"
+        p='50px 0'
       >
-        <Image zIndex="-1" position="absolute" src={Fon} />
-        <Container maxW="1500px">
+        <Image objectFit='cover' w='100%' h='100%' zIndex="-1" position="absolute" src={Fon} />
+        <Container  maxW="1500px">
           <Text
             color="white"
             textAlign="center"
             fontWeight="700"
-            fontSize="60px"
-            alignItems="center"
+            mt='80px'
+            fontSize={{base:'22px',md:'34px',xl:'60px'}}
             justifyContent="center"
           >
             2009 YIL DEKABR OYIDA MADANIYAT VA SPORT ISHLARI VAZIRLIGI TOMONIDAN
@@ -35,8 +35,8 @@ export default function HomePage() {
       <Categoria />
      
       <Container maxW="1500px">
-         <TarixiyJoylar />
-         </Container>
+        <TarixiyJoylar />
+      </Container>
     </>
   );
 }
