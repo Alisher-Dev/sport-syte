@@ -2,14 +2,16 @@ import { Box, Container, Image, Select, Text } from "@chakra-ui/react";
 import Logo from "../../../public/logo.svg";
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
+import BurgerMenu from "./BurgerMenu";
 
 export default function Header() {
   const [scrollY, setScrollY] = useState(0);
   const navbar = [
     { id: 1, title: "HOME", url: "/" },
-    { id: 2, title: "EXPLORE", url: "/" },
-    { id: 3, title: "REVIEW", url: "/" },
-    { id: 4, title: "CONTACT", url: "/" },
+    { id: 2, title: "YRATILISH", url: "/yaratilish" },
+    { id: 3, title: "YANGILIK", url: "/yangilik" },
+    { id: 4, title: "KOMPLECS", url: "/kompleks" },
+    { id: 5, title: "VILOYATLAR", url: "/viloyat" },
   ];
 
   useEffect(() => {
@@ -46,19 +48,28 @@ export default function Header() {
           <Link to="/">
             <Image w={{md:"60px",sm:'30' }}h={{md:"60px",base:'30' }} src={Logo} />
           </Link>
-          <Box alignItems="center" display="flex" gap={{md:"25px",base:'10px'}}>
-            {navbar.map((el) => (
-              <Link key={el.id} to={el.url}>
-                <Text
-                  fontSize={{base:'10px',sm:'18m',md:"18px"}}
-                  _hover={{ color: "rgba(0, 148, 255, 0.7)" }}
-                  transition="all 0.2s ease"
-                  color={scrollY ? "rgb(96, 96, 96)" : "rgb(180, 180, 180)"}
-                >
-                  {el.title}
-                </Text>
-              </Link>
-            ))}
+
+          <Box display="flex" alignItems="center" gap="20px">
+            <Box
+              as="span"
+              alignItems="center"
+              display={{ base: "none", md: "flex" }}
+              gap="25px"
+            >
+              {navbar.map((el) => (
+                <Link key={el.id} to={el.url}>
+                  <Text
+                    fontSize={{ base: "14px", lg: "18px" }}
+                    _hover={{ color: "rgba(0, 148, 255, 0.7)" }}
+                    transition="all 0.2s ease"
+                    color={scrollY ? "rgb(96, 96, 96)" : "rgb(180, 180, 180)"}
+                  >
+                    {el.title}
+                  </Text>
+                </Link>
+              ))}
+            </Box>
+
             <Select
               color={scrollY ? "rgb(96, 96, 96)" : "rgb(180, 180, 180)"}
               bg="transparent"
@@ -69,8 +80,10 @@ export default function Header() {
             >
               <option value="option1">UZ</option>
               <option value="option2">RU</option>
-              <option value="option3">EN</option>
             </Select>
+            <Box m="auto 0" display={{ base: "flex", md: "none" }}>
+              <BurgerMenu />
+            </Box>
           </Box>
         </Container>
       </Box>

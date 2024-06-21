@@ -26,14 +26,18 @@ function Yangiliklar() {
     <Box mt="100px">
       <Container maxW="1500px" m="0 auto">
         <Text
-          fontSize="48px"
+          fontSize={{ base: "28px", md: "32px", lg: "40px", xl: "48px" }}
           textAlign="center"
           color="rgb(72, 72, 72)"
           fontWeight="600"
         >
           Yangiliklar
         </Text>
-        <Text fontSize="32px" color="rgb(115, 114, 114)" textAlign="center">
+        <Text
+          fontSize={{ base: "18px", md: "22px", xl: "28px" }}
+          color="rgb(115, 114, 114)"
+          textAlign="center"
+        >
           Explore New place, food, culture around the world and many more
         </Text>
         {arr.map((el) => (
@@ -43,21 +47,23 @@ function Yangiliklar() {
             mt="40px"
             gap="10px"
             display="flex"
+            flexDirection={{ base: "column", lg: "unset" }}
             borderRadius="10px"
             overflow="hidden"
           >
             <Image
               src={el.image}
               alt="error in img"
-              w="800px"
+              w={{ baser: "100%", lg: "50%" }}
               objectFit="cover"
-              h="500px"
+              minH="200px"
+              maxH="400px"
             />
             <Text
-              w="50%"
-              p="30px 10px"
-              fontSize="18px"
-              maxH="500px"
+              w={{ baser: "100%", lg: "50%" }}
+              p={{ base: "10px", lg: "30px 10px" }}
+              fontSize={{ base: "15px", md: "18px" }}
+              maxH={{ base: "250px", md: "400px" }}
               overflow="auto"
               color="rgba(115, 114, 114, 1)"
             >

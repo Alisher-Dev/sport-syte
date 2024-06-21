@@ -6,14 +6,18 @@ function Ustoz() {
     <Box mt="100px">
       <Container maxW="1500px" m="0 auto">
         <Text
-          fontSize="48px"
+          fontSize={{ base: "28px", md: "32px", lg: "40px", xl: "48px" }}
           textAlign="center"
           color="rgb(72, 72, 72)"
           fontWeight="600"
         >
           Ustoz
         </Text>
-        <Text fontSize="32px" color="rgb(115, 114, 114)" textAlign="center">
+        <Text
+          fontSize={{ base: "18px", md: "22px", xl: "28px" }}
+          color="rgb(115, 114, 114)"
+          textAlign="center"
+        >
           Explore New place, food, culture around the world and many more
         </Text>
         <UstozItem />

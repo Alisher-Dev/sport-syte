@@ -8,9 +8,10 @@ import Facebook from "../../assets/icon/icons8-facebook.svg";
 function Footer() {
   const navbar = [
     { id: 1, title: "HOME", url: "/" },
-    { id: 2, title: "EXPLORE", url: "/" },
-    { id: 3, title: "REVIEW", url: "/" },
-    { id: 4, title: "CONTACT", url: "/" },
+    { id: 2, title: "YRATILISH", url: "/yaratilish" },
+    { id: 3, title: "YANGILIK", url: "/yangilik" },
+    { id: 4, title: "KOMPLECS", url: "/kompleks" },
+    { id: 5, title: "VILOYATLAR", url: "/viloyat" },
   ];
 
   const more = [
@@ -22,13 +23,29 @@ function Footer() {
   return (
     <Box>
       <Container maxW="1500px" m="30px auto">
-        <Flex alignItems="center" justifyContent="space-between">
-          <Image src={"../../../public/logo.svg"} alt="error" />
-          <Box as="nav" display="flex" alignItems="center" gap="30px">
+        <Flex
+          alignItems="center"
+          gap="20px"
+          flexWrap="wrap"
+          justifyContent={{ base: "center", sm: "space-between" }}
+        >
+          <Image
+            w={{ base: "50px", md: "70px" }}
+            src={"../../../public/logo.svg"}
+            alt="error"
+          />
+          <Box
+            as="nav"
+            flexWrap="wrap"
+            display="flex"
+            justifyContent="center"
+            alignItems="center"
+            gap="30px"
+          >
             {navbar.map((el) => (
               <Link key={el.id} to={el.url}>
                 <Text
-                  fontSize="20px"
+                  fontSize={{ base: "14px", md: "20px" }}
                   _hover={{ color: "rgba(0, 148, 255, 0.7)" }}
                   color="rgba(72, 72, 72, 0.7)"
                   transition="all 0.2s ease"
@@ -43,14 +60,29 @@ function Footer() {
           alignItems="center"
           mt="30px"
           pt="30px"
+          flexWrap="wrap"
+          gap="20px"
           borderTop="1px solid rgba(72, 72, 72, 0.2)"
-          justifyContent="space-between"
+          justifyContent={{ base: "center", md: "space-between" }}
         >
-          <Text fontSize="16px" color="rgba(72, 72, 72, 0.7)">
-            ©Copyright. Designed And Developed By Themesine
+          <Text
+            fontSize={{ base: "13px", md: "16px" }}
+            color="rgba(72, 72, 72, 0.7)"
+          >
+            @ intention is a company
           </Text>
-          <Box as="nav" display="flex" alignItems="center" gap="30px">
-            <Text fontSize="16px" color="rgba(72, 72, 72, 0.7)">
+          <Box
+            as="nav"
+            flexWrap="wrap"
+            display="flex"
+            alignItems="center"
+            justifyContent="center"
+            gap="30px"
+          >
+            <Text
+              fontSize={{ base: "13px", md: "16px" }}
+              color="rgba(72, 72, 72, 0.7)"
+            >
               +998 99 202-78-06
             </Text>
             {more.map((el) => (
@@ -58,7 +90,7 @@ function Footer() {
                 <Image
                   borderRadius="30px"
                   bg="rgba(240,240,240,1)"
-                  w="40px"
+                  w={{ base: "35px", md: "40px" }}
                   p="5px"
                   objectFit="contain"
                   src={el.image}
@@ -74,28 +106,3 @@ function Footer() {
 }
 
 export { Footer };
-
-//yangiliklar
-// {
-//   id: number,
-//   updated_at: Date,
-//   created_at: Date,
-//   title_uz: string,
-//   title_ru: string,
-//   desc_uz: string,
-//   desc_ru: string,
-//   img: string, // img or video
-// }
-
-//viloyatlar
-// {
-//   id: number,
-//   updated_at: Date,
-//   created_at: Date,
-//   title_uz: string,
-//   title_ru: string,
-//   desc_uz: string,
-//   desc_ru: string,
-//   viloyatImg: string, // brat b viloyat rasimi ilije xorazm ili tashkent t.d.p
-//   teacherImg: string  // a berda ustozlar rasimi agar yakshi varianting bolsa shundat ok ;)
-// }
