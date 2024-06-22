@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { ChangeEvent, useEffect, useState } from "react";
 import { Box, Container, Image, Select, Text } from "@chakra-ui/react";
 import Logo from "../../../public/logo.svg";
 import { Link } from "react-router-dom";
@@ -7,7 +7,7 @@ import useLang from "../helpers/lang";
 
 export default function Header() {
   const [scrollY, setScrollY] = useState(0);
-  const { changeLang } = useLang();
+  const { changeLang, lang } = useLang();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -21,9 +21,9 @@ export default function Header() {
     };
   }, []);
 
-  const changeLanguage = (e: any) => {
+  const changeLanguage = (e: ChangeEvent<HTMLSelectElement>) => {
     const lang = e.target.value;
-    changeLang(lang);
+    changeLang(lang as "uz" | "ru");
   };
 
   const navbar_uz = [
@@ -42,7 +42,7 @@ export default function Header() {
     { id: 5, title: "РЕГИОНЫ", url: "/viloyat" },
   ];
 
-  const navbars = "ru" === "ru" ? navbar_ru : navbar_uz;
+  const navbars = lang === "ru" ? navbar_ru : navbar_uz;
 
   return (
     <Box
@@ -93,7 +93,7 @@ export default function Header() {
             w={{ base: "70px", md: "80px" }}
             height="20px"
             onChange={changeLanguage}
-            value={"ru"}
+            defaultValue={lang}
             variant="ghost"
           >
             <option value="uz">UZ</option>

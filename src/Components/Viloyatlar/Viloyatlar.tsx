@@ -1,7 +1,9 @@
 import { Box, Container, Grid, Text } from "@chakra-ui/react";
 import ViloyatItem from "./ViloyatItem";
+import useLang from "../helpers/lang";
 
 function Viloyatlar() {
+  const { t } = useLang();
   const arr = [
     {
       id: 1,
@@ -33,14 +35,14 @@ function Viloyatlar() {
           color="rgb(72, 72, 72)"
           fontWeight="600"
         >
-          Viloyatlar
+          {t("viloyat.title")}
         </Text>
         <Text
           fontSize={{ base: "18px", md: "22px", xl: "28px" }}
           color="rgb(115, 114, 114)"
           textAlign="center"
         >
-          Explore New place, food, culture around the world and many more
+          {t("viloyat.desc")}
         </Text>
         <Grid
           gridTemplateColumns={{

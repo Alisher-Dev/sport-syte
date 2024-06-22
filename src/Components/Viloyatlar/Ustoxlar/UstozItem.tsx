@@ -1,6 +1,8 @@
 import { Box, Image, Text } from "@chakra-ui/react";
+import useLang from "../../helpers/lang";
 
 function UstozItem() {
+  const { t } = useLang();
   return (
     <Box>
       <Box boxShadow="-1px 3px 10px rgba(180, 180, 180, 0.4)">
@@ -18,7 +20,7 @@ function UstozItem() {
         fontWeight="600"
         textAlign="center"
       >
-        Ustaz haqida
+        {t("viloyat.tichedesc")}
       </Text>
       <Box
         mt="20px"

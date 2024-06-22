@@ -1,1 +1,34 @@
-{}
+{
+  "home": {
+    "title": "2009 YIL DEKABR OYIDA MADANIYAT VA SPORT ISHLARI VAZIRLIGI TOMONIDAN O‘ZBEK JANG SAN’AT SPORTIGA O‘ZBEKISTON MILLIY SPORT TURI MAQOMI BERILDI.",
+    "yaratish": "Sizni qiziqtirishi mumkin",
+    "category": {
+      "yaratish": "Yaratilish Tarixi",
+      "kompleks": "Kompleks Mashqlar",
+      "news": "Yangiliklar",
+      "location": "Viloyatlar"
+    },
+    "desc": "Dunyo bo'ylab yangi joy, oziq-ovqat, madaniyat va boshqalarni o'rganing",
+    "tarixiy": "Tarixiy joylar",
+    "search": "qidirmoq",
+    "searchValue": "Siz nimani izlayapsiz?"
+  },
+  "yaratish": {
+    "title": "Yaratilish Tarixi",
+    "desc": "Explore New place, food, culture around the world and many more"
+  },
+  "news": {
+    "title": "Yangiliklar",
+    "desc": "Explore New place, food, culture around the world and many more"
+  },
+  "kompleks": {
+    "title": "Kompleks mashklar",
+    "desc": "Explore New place, food, culture around the world and many more"
+  },
+  "viloyat": {
+    "title": "Viloyatlar",
+    "desc": "Explore New place, food, culture around the world and many more",
+    "tiche": "Ustoz",
+    "tichedesc": "O'qituvchi haqida"
+  }
+}

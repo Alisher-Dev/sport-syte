@@ -1,10 +1,12 @@
 import { Box, Container, Flex, Text } from "@chakra-ui/react";
 import SliderKompleks from "./SliderKompleks";
 import { useEffect, useState } from "react";
+import useLang from "../helpers/lang";
 
 function Kompleks() {
   const [data, setData] = useState("");
   const [windowWidth, setWindowWidth] = useState(window.innerWidth);
+  const { t } = useLang();
 
   useEffect(() => {
     const handleResize = () => {
@@ -27,14 +29,14 @@ function Kompleks() {
           color="rgb(72, 72, 72)"
           fontWeight="600"
         >
-          Kompleks mashklar
+          {t("kompleks.title")}
         </Text>
         <Text
           fontSize={{ base: "18px", md: "22px", xl: "28px" }}
           color="rgb(115, 114, 114)"
           textAlign="center"
         >
-          Explore New place, food, culture around the world and many more
+          {t("kompleks.desc")}
         </Text>
         <Box mt="40px">
           {windowWidth > 1000 ? (

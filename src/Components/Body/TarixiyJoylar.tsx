@@ -1,7 +1,9 @@
 import { Box, Text } from "@chakra-ui/react";
-import Card from "../Cards/RCard";
+import Card from "../Cards/GlobalRegionCard";
+import useLang from "../helpers/lang";
 
 export default function TarixiyJoylar() {
+  const { t } = useLang();
   return (
     <>
       <Box>
@@ -12,7 +14,7 @@ export default function TarixiyJoylar() {
           fontSize="54px"
           textAlign="center"
         >
-          Tarixiy joylar
+          {t("home.tarixiy")}
         </Text>
         <Text
           color="#737272"
@@ -21,8 +23,7 @@ export default function TarixiyJoylar() {
           fontSize="22px"
           textAlign="center"
         >
-          Dunyo bo'ylab yangi joy, oziq-ovqat, madaniyat va boshqalarni
-          o'rganing
+          {t("home.desc")}
         </Text>
       </Box>
       <Card />

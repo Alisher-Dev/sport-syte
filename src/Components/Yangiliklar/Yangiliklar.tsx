@@ -1,7 +1,9 @@
 import { Box, Container, Image, Text } from "@chakra-ui/react";
 import Button from "../helpers/Button";
+import useLang from "../helpers/lang";
 
 function Yangiliklar() {
+  const { t } = useLang();
   const arr = [
     {
       id: 1,
@@ -31,14 +33,14 @@ function Yangiliklar() {
           color="rgb(72, 72, 72)"
           fontWeight="600"
         >
-          Yangiliklar
+          {t("news.title")}
         </Text>
         <Text
           fontSize={{ base: "18px", md: "22px", xl: "28px" }}
           color="rgb(115, 114, 114)"
           textAlign="center"
         >
-          Explore New place, food, culture around the world and many more
+          {t("news.desc")}
         </Text>
         {arr.map((el) => (
           <Box

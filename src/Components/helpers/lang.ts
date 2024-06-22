@@ -9,11 +9,10 @@ const useLang = () => {
   };
 
   const currentLang = i18n.language as "uz" | "ru";
-  //   const lang = (i18n.language[0].toUpperCase() + i18n.language[1]) as
-  //     | "uz"
-  //     | "ru";
 
-  return { currentLang, changeLang, t };
+  const lang = currentLang || "uz" || "ru";
+
+  return { currentLang, lang, changeLang, t };
 };
 
 export default useLang;

@@ -3,7 +3,7 @@ import App from "./App.tsx";
 import { ChakraProvider } from "@chakra-ui/react";
 import { BrowserRouter } from "react-router-dom";
 import "./style/style.css";
-import "i18next";
+import "./Components/helpers/language.ts";
 
 ReactDOM.createRoot(document.getElementById("root")!).render(
   <ChakraProvider>

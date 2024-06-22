@@ -41,3 +41,7 @@
   border-radius: 0 10px 10px 0;
   left: 0;
 }
+
+.menuCarts:hover .iconSvg {
+  fill: "#ffffff";
+}

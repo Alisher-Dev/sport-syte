@@ -1,7 +1,9 @@
 import { Box, Container, Text } from "@chakra-ui/react";
 import UstozItem from "./UstozItem";
+import useLang from "../../helpers/lang";
 
 function Ustoz() {
+  const { t } = useLang();
   return (
     <Box mt="100px">
       <Container maxW="1500px" m="0 auto">
@@ -11,14 +13,14 @@ function Ustoz() {
           color="rgb(72, 72, 72)"
           fontWeight="600"
         >
-          Ustoz
+          {t("viloyat.tiche")}
         </Text>
         <Text
           fontSize={{ base: "18px", md: "22px", xl: "28px" }}
           color="rgb(115, 114, 114)"
           textAlign="center"
         >
-          Explore New place, food, culture around the world and many more
+          {t("viloyat.desc")}
         </Text>
         <UstozItem />
       </Container>

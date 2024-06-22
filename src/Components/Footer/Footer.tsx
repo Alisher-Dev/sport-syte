@@ -4,15 +4,27 @@ import Telegram from "../../assets/icon/icons8-telegram.svg";
 import Instagram from "../../assets/icon/icons8-instagram.svg";
 import Youtube from "../../assets/icon/icons8-youtube.svg";
 import Facebook from "../../assets/icon/icons8-facebook.svg";
+import useLang from "../helpers/lang";
 
 function Footer() {
-  const navbar = [
+  const { lang } = useLang();
+  const navbar_uz = [
     { id: 1, title: "HOME", url: "/" },
     { id: 2, title: "YRATILISH", url: "/yaratilish" },
     { id: 3, title: "YANGILIK", url: "/yangilik" },
     { id: 4, title: "KOMPLECS", url: "/kompleks" },
     { id: 5, title: "VILOYATLAR", url: "/viloyat" },
   ];
+
+  const navbar_ru = [
+    { id: 1, title: "ГЛАВНАЯ", url: "/" },
+    { id: 2, title: "СОЗДАНИЕ", url: "/yaratilish" },
+    { id: 3, title: "НОВОСТИ", url: "/yangilik" },
+    { id: 4, title: "КОМПЛЕКС", url: "/kompleks" },
+    { id: 5, title: "РЕГИОНЫ", url: "/viloyat" },
+  ];
+
+  const navbars = lang === "ru" ? navbar_ru : navbar_uz;
 
   const more = [
     { id: 1, image: Telegram, url: "/" },
@@ -42,7 +54,7 @@ function Footer() {
             alignItems="center"
             gap="30px"
           >
-            {navbar.map((el) => (
+            {navbars.map((el) => (
               <Link key={el.id} to={el.url}>
                 <Text
                   fontSize={{ base: "14px", md: "20px" }}

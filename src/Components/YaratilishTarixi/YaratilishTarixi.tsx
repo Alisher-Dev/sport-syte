@@ -1,8 +1,10 @@
 import { Box, Container, Image, Text } from "@chakra-ui/react";
 import User from "../../assets/image/Rectangle 31.png";
 import Trenerovka from "../../assets/image/Rectangle 33.png";
+import useLang from "../helpers/lang";
 
 function YaratilishTarixi() {
+  const { t } = useLang();
   return (
     <Box mt="100px">
       <Container maxW="1500px" m="0 auto">
@@ -12,14 +14,14 @@ function YaratilishTarixi() {
           color="rgb(72, 72, 72)"
           fontWeight="600"
         >
-          Yaratilish Tarixi
+          {t("yaratish.title")}
         </Text>
         <Text
           fontSize={{ base: "18px", md: "22px", xl: "28px" }}
           color="rgb(115, 114, 114)"
           textAlign="center"
         >
-          Explore New place, food, culture around the world and many more
+          {t("yaratish.desc")}
         </Text>
         <Box
           mt="80px"

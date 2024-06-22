@@ -1,14 +1,16 @@
-import React from "react";
-import { Box, Container, Image, Text } from "@chakra-ui/react";
-import IconTarix from "../../assets/icon/IconTarix.svg";
+import { Box, Container, Text } from "@chakra-ui/react";
+import IconTarix from "../../assets/icon/Tarixiy.svg?react";
+import IconKompleks from "../../assets/icon/kompleks.svg?react";
+import IconNews from "../../assets/icon/news.svg?react";
+import IconLocation from "../../assets/icon/location.svg?react";
 import CategoriasCard from "../Cards/CategoriasCard";
-
-
+import useLang from "../helpers/lang";
 
 export default function Categoria() {
+  const { t } = useLang();
   return (
     <>
-          <Text
+      <Text
         color="#484848"
         fontFamily="Inter"
         fontWeight="600"
@@ -16,16 +18,36 @@ export default function Categoria() {
         fontSize="54px"
         textAlign="center"
       >
-        Yaratilish tarixi
+        {t("home.yaratish")}
       </Text>
       <Container maxW="1500px">
-      <Box display='flex' gap='20px' gridTemplateColumns='repeat(4,1fr)'>
-     <CategoriasCard title={"Yaratilish Tarixi"} imageUrl={IconTarix} desc="150 Listing"     />
-     <CategoriasCard title={"Yaratilish Tarixi"} imageUrl={IconTarix} desc="150 Listing"     />
-     <CategoriasCard title={"Yaratilish Tarixi"} imageUrl={IconTarix} desc="150 Listing"     />
-     <CategoriasCard title={"Yaratilish Tarixi"} imageUrl={IconTarix} desc="150 Listing"     />
-     </Box>
-     </Container>
+        <Box
+          gap="20px"
+          display="grid"
+          gridTemplateColumns="repeat(auto-fill, minmax(300px, 1fr))"
+        >
+          <CategoriasCard
+            title={t("home.category.yaratish")}
+            ImageUrl={IconTarix}
+            url="/yaratilish"
+          />
+          <CategoriasCard
+            title={t("home.category.kompleks")}
+            ImageUrl={IconKompleks}
+            url="/kompleks"
+          />
+          <CategoriasCard
+            title={t("home.category.news")}
+            ImageUrl={IconNews}
+            url="/yangilik"
+          />
+          <CategoriasCard
+            title={t("home.category.location")}
+            ImageUrl={IconLocation}
+            url="/viloyat"
+          />
+        </Box>
+      </Container>
     </>
   );
 }
