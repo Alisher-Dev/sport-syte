@@ -15,13 +15,7 @@ function Ustoz() {
         >
           {t("viloyat.tiche")}
         </Text>
-        <Text
-          fontSize={{ base: "18px", md: "22px", xl: "28px" }}
-          color="rgb(115, 114, 114)"
-          textAlign="center"
-        >
-          {t("viloyat.desc")}
-        </Text>
+
         <UstozItem />
       </Container>
     </Box>

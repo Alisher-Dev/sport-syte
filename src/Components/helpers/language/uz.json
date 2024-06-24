@@ -16,7 +16,13 @@
   },
   "yaratish": {
     "title": "Yaratilish Tarixi",
-    "desc": "Explore New place, food, culture around the world and many more"
+    "desc": "Explore New place, food, culture around the world and many more",
+    "desc1": "O‘zbekiston Jang San’ati O‘zbekiston Respublikasi tayekvondo ITF Federatsiyasi Prezidenti, O‘zbekistonda xizmat ko‘rsatgan murabbiy, qora kamar 7 Dan Tayekwon-do sohibi, tajribali jang san’ati ustasi Po‘lat Usmonov, shuningdek, o‘zbek jang san’at federatsiyasi faxriy prezidenti Nasirova A.X. rahnamoligida yaratilgan. Bir necha yillar davomida ota-boblarmizning jang san’ati texnika va harbiy uslublar merosi o‘rganilib, boshqa jang tizimining eng samarali metodlari bilan boyitilildi hamda O‘zbek Jang San’at tashkil etildi. Xabari yo‘q insonda bir savol tug‘ilishi tabiiy: jang san’atida yigirmadan ortiq faol jang turlari mavjud vaqtda qo‘shimcha jang turining nima",
+    "desc2": "keragi bor? Gap shundaki o‘zbek jang san’ati tizimida o‘ziga xos bir qancha xususiyatlari bor:.",
+    "desc3": "- Milliy liboslar va tilidan foydalanish; - himoya va hujum usullaridan bir vaqtning o‘zida foydalanish; -yoshlarni harbiy-vatanparvarlik ruhida tarbiyalash uchun keng imkoniyatlar; - huquq-tartibot idoralari va sport maktablarida jang elementlaridan foydalanish -yoshlarning tarixiy merosga bo‘lgan qiziqishini uyg‘otish va boshqalar.",
+    "desc4": "UJS - zamonaviy jang san’ati bo‘lib, O‘zbekiston xalqi va boshqa jang san’atining eng samarali jangovar tizimlari elementlari va an’analarini o‘zida mujassam etgan.",
+    "desc5": "Ujs 5 yo‘nalishdan iborat: -Sport-sog‘lomlashtiruvchi (40 yoshdan kattalar uchun); -Qo‘l san’ati (3000 dan ortiq qo‘l harakatlari); -Temuriylar jang san’ati (pichoq, qilich, tayoq, nayza bilan ishlash);  -Jang Kurash ( Kurash).  UJS texnikasi - bir necha ming qo‘l, oyoq zarbalari, otishlar, predmetlardan (qilich, pichoq, tayoq, uzun tayoq) iborat.  O‘zbek jang san’ati sporti, yoshlarni vatanparvarlik ruhida tarbiya qilishga yordam beradi. Buyuk ajdodlarimiz va O‘zbekistonning tarixiy shaxslari ismlari rasman himoya hujum va majmualarga qo‘yilgan. Musobaqa davomida albatta mamlakatning davlat ramzlariga katta e’tibor beriladi. Sportchilarning sport kiyimida milliy qadriyatlar aks ettirilgan.",
+    "desc6": "O‘zbekiston jang san’ati tarkibiga quyidagi musobaqalar kiradi. 1 O‘zbek jang san’ati Sparringlari: 1.Bolalar va o‘smirlar - 2 daqiqa muddatli 2 tur, tur o‘rtasida 1 daqiqali tanaffus bilan, shuningdek 6 nafar sportchidan tashkil topgan jamoa uchun 2 daqiqalik 1 raund. 2.Kattalar - 3 daqiqa, tur o‘rtasida va 6 nafar sportchidan tashkil topgan jamoa uchun 3 daqiqalik 1 raund, 1 daqiqa tanaffus bilan. 2.Musobaqada texnik harakatlar majmuini namoyish qilish: Individual yo‘nalishda - 1 ishtirokchi Jamoaviy yo‘nalishda - jamoa 6 ishtirokchidan tashkil topadi."
   },
   "news": {
     "title": "Yangiliklar",

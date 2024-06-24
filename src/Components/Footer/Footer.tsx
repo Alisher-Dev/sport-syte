@@ -1,5 +1,5 @@
 import { Box, Container, Flex, Image, Text } from "@chakra-ui/react";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import Telegram from "../../assets/icon/icons8-telegram.svg";
 import Instagram from "../../assets/icon/icons8-instagram.svg";
 import Youtube from "../../assets/icon/icons8-youtube.svg";
@@ -9,9 +9,12 @@ import Logo from "/logo.svg";
 
 function Footer() {
   const { lang } = useLang();
+
+  const { pathname } = useLocation();
+
   const navbar_uz = [
-    { id: 1, title: "HOME", url: "/" },
-    { id: 2, title: "YRATILISH", url: "/yaratilish" },
+    { id: 1, title: "UY", url: "/" },
+    { id: 2, title: "YARATILISH", url: "/yaratilish" },
     { id: 3, title: "YANGILIK", url: "/yangilik" },
     { id: 4, title: "KOMPLECS", url: "/kompleks" },
     { id: 5, title: "VILOYATLAR", url: "/viloyat" },
@@ -52,11 +55,19 @@ function Footer() {
             gap="30px"
           >
             {navbars.map((el) => (
-              <Link key={el.id} to={el.url}>
+              <Link
+                key={el.id}
+                to={el.url}
+                style={{
+                  color:
+                    pathname == el.url
+                      ? "rgba(0, 148, 255, 0.7)"
+                      : "rgb(96, 96, 96)",
+                }}
+              >
                 <Text
                   fontSize={{ base: "14px", md: "20px" }}
                   _hover={{ color: "rgba(0, 148, 255, 0.7)" }}
-                  color="rgba(72, 72, 72, 0.7)"
                   transition="all 0.2s ease"
                 >
                   {el.title}

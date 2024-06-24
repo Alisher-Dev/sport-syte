@@ -16,15 +16,6 @@ export default function TarixiyJoylar() {
         >
           {t("home.tarixiy")}
         </Text>
-        <Text
-          color="#737272"
-          fontWeight="600"
-          m="10px 0"
-          fontSize={{ base: "14px", md: "18px", lg: "22px" }}
-          textAlign="center"
-        >
-          {t("home.desc")}
-        </Text>
       </Box>
       <Card />
     </>

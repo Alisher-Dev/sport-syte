@@ -28,13 +28,7 @@ function Viloyatlar() {
         >
           {t("viloyat.title")}
         </Text>
-        <Text
-          fontSize={{ base: "18px", md: "22px", xl: "28px" }}
-          color="rgb(115, 114, 114)"
-          textAlign="center"
-        >
-          {t("viloyat.desc")}
-        </Text>
+
         {!Region[0] && !error && (
           <Spinner m="100px auto 0" w="50px" h="50px" display="block" />
         )}

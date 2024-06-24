@@ -1,6 +1,4 @@
 import { Box, Container, Image, Text } from "@chakra-ui/react";
-import User from "../../assets/image/Rectangle 31.png";
-import Trenerovka from "../../assets/image/Rectangle 33.png";
 import useLang from "../helpers/lang";
 
 function YaratilishTarixi() {
@@ -16,21 +14,15 @@ function YaratilishTarixi() {
         >
           {t("yaratish.title")}
         </Text>
-        <Text
-          fontSize={{ base: "18px", md: "22px", xl: "28px" }}
-          color="rgb(115, 114, 114)"
-          textAlign="center"
-        >
-          {t("yaratish.desc")}
-        </Text>
+
         <Box
           mt="80px"
           display="flex"
           flexDirection={{ base: "column", lg: "unset" }}
-          gap="20px"
+          gap="18px"
         >
           <Image
-            src={User}
+            src="https://www.tourprom.ru/site_media/images/upload/2021/8/28/pressreleasephoto/ozbek-jang-sanati-0-0-0-0-1629875866.jpg"
             alt="error in image"
             w={{ base: "100%", lg: "50%" }}
             maxH={{ base: "500px", md: "100%" }}
@@ -39,105 +31,78 @@ function YaratilishTarixi() {
           />
           <Box>
             <Text
-              fontSize={{ base: "14px", lg: "16px", xl: "20px" }}
-              fontWeight="600"
+              fontSize={{ base: "14px", lg: "16px", xl: "18px" }}
+              fontWeight="500"
               color="rgb(115, 114, 114)"
             >
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic
-              rerum, eos ratione fuga dicta qui recusandae soluta porro cumque
-              repudiandae dignissimos labore est quibusdam dolorem facere
-              inventore minus ipsa necessitatibus veritatis quia exercitationem
-              sed tenetur. At, ratione facere. Qui nam facilis pariatur placeat
-              necessitatibus voluptate rem atque delectus autem omnis.
-            </Text>
-            <Text
-              fontSize={{ base: "14px", lg: "16px", xl: "20px" }}
-              fontWeight="600"
-              color="rgb(115, 114, 114)"
-              mt="15px"
-            >
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic
-              rerum, eos ratione fuga dicta qui recusandae soluta porro cumque
-              repudiandae dignissimos labore est quibusdam dolorem facere
-              inventore minus ipsa necessitatibus veritatis quia exercitationem
-              sed tenetur. At, ratione facere. Qui nam facilis pariatur placeat
-              necessitatibus voluptate rem atque delectus autem omnis.
-            </Text>
-            <Text
-              fontSize={{ base: "14px", lg: "16px", xl: "20px" }}
-              fontWeight="600"
-              color="rgb(115, 114, 114)"
-              mt="15px"
-            >
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic
-              rerum, eos ratione fuga dicta qui recusandae soluta porro cumque
-              repudiandae dignissimos labore est quibusdam dolorem facere
-              inventore minus ipsa necessitatibus veritatis quia exercitationem
-              sed tenetur. At, ratione facere. Qui nam facilis pariatur placeat
-              necessitatibus voluptate rem atque delectus autem omnis.
+              {t("yaratish.desc1")}
             </Text>
           </Box>
         </Box>
 
+        <Box mt="30px" gap="18px">
+          <Text
+            fontSize={{ base: "14px", lg: "16px", xl: "18px" }}
+            fontWeight="500"
+            color="rgb(115, 114, 114)"
+          >
+            {t("yaratish.desc2")}
+          </Text>
+          <Text
+            mt="18px"
+            fontSize={{ base: "14px", lg: "16px", xl: "18px" }}
+            fontWeight="500"
+            color="rgb(115, 114, 114)"
+          >
+            {t("yaratish.desc3")}
+          </Text>
+          <Text
+            mt="18px"
+            fontSize={{ base: "14px", lg: "16px", xl: "18px" }}
+            fontWeight="500"
+            color="rgb(115, 114, 114)"
+          >
+            {t("yaratish.desc4")}
+          </Text>
+
+          <Text
+            mt="18px"
+            fontSize={{ base: "14px", lg: "16px", xl: "18px" }}
+            fontWeight="500"
+            color="rgb(115, 114, 114)"
+          >
+            {t("yaratish.desc5")}
+          </Text>
+        </Box>
         <Box
           mt="80px"
           display="flex"
           flexDirection={{ base: "column-reverse", lg: "unset" }}
-          gap="20px"
+          gap="18px"
         >
           <Box>
             <Text
-              fontSize={{ base: "14px", lg: "16px", xl: "20px" }}
-              fontWeight="600"
+              fontSize={{ base: "14px", lg: "16px", xl: "18px" }}
+              fontWeight="500"
               color="rgb(115, 114, 114)"
             >
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic
-              rerum, eos ratione fuga dicta qui recusandae soluta porro cumque
-              repudiandae dignissimos labore est quibusdam dolorem facere
-              inventore minus ipsa necessitatibus veritatis quia exercitationem
-              sed tenetur. At, ratione facere. Qui nam facilis pariatur placeat
-              necessitatibus voluptate rem atque delectus autem omnis.
-            </Text>
-            <Text
-              fontSize={{ base: "14px", lg: "16px", xl: "20px" }}
-              fontWeight="600"
-              color="rgb(115, 114, 114)"
-              mt="15px"
-            >
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic
-              rerum, eos ratione fuga dicta qui recusandae soluta porro cumque
-              repudiandae dignissimos labore est quibusdam dolorem facere
-              inventore minus ipsa necessitatibus veritatis quia exercitationem
-              sed tenetur. At, ratione facere. Qui nam facilis pariatur placeat
-              necessitatibus voluptate rem atque delectus autem omnis.
-            </Text>
-            <Text
-              fontSize={{ base: "14px", lg: "16px", xl: "20px" }}
-              fontWeight="600"
-              color="rgb(115, 114, 114)"
-              mt="15px"
-            >
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic
-              rerum, eos ratione fuga dicta qui recusandae soluta porro cumque
-              repudiandae dignissimos labore est quibusdam dolorem facere
-              inventore minus ipsa necessitatibus veritatis quia exercitationem
-              sed tenetur. At, ratione facere. Qui nam facilis pariatur placeat
-              necessitatibus voluptate rem atque delectus autem omnis.
+              {t("yaratish.desc6")}
             </Text>
           </Box>
           <Image
-            src={User}
+            src="https://olamsport.com/upload/storage/60728_680.jpg"
             alt="error in image"
             w={{ base: "100%", lg: "50%" }}
-            maxH={{ base: "500px", md: "100%" }}
+            maxH="500px"
             objectFit="cover"
             borderRadius="10px"
           />
         </Box>
         <Image
-          src={Trenerovka}
+          src="https://sports.uz/source/Almurat-2018/Ozbek-jang-sanati/Ozbek-jang%20(4).jpg"
           w="100%"
-          minH="300px"
+          minH="250px"
+          maxH="700px"
           objectFit="cover"
           borderRadius="10px"
           alt="error in img"

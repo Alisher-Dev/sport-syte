@@ -14,8 +14,6 @@ import {
   Text,
 } from "@chakra-ui/react";
 
-import "./RegionCard.css";
-
 interface CardProps {
   title: string;
   imageUrl: string;
@@ -46,22 +44,6 @@ const Card: React.FC<CardProps> = ({ title, content, imageUrl }: CardProps) => {
           objectFit="cover"
           alt="Card"
         />
-        <Box
-          className="itemBox"
-          w="100%"
-          borderRadius="10px"
-          h="200px"
-          position="absolute"
-          bottom="0"
-          left="0"
-          zIndex="5"
-          bgGradient="linear(to-b, rgba(153, 153, 153, 0), rgba(255, 255, 255, 1))"
-          _hover={{
-            bgGradient:
-              "linear(to-b, rgba(153, 153, 153, 0), rgba(255, 255, 255, 1)))",
-            h: "100%",
-          }}
-        ></Box>
       </Box>
 
       <Modal isOpen={isOpen} onClose={onClose}>

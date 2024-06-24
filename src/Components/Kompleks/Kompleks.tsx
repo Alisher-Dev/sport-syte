@@ -31,13 +31,6 @@ function Kompleks() {
         >
           {t("kompleks.title")}
         </Text>
-        <Text
-          fontSize={{ base: "18px", md: "22px", xl: "28px" }}
-          color="rgb(115, 114, 114)"
-          textAlign="center"
-        >
-          {t("kompleks.desc")}
-        </Text>
         <Box mt="40px">
           {windowWidth > 1000 ? (
             <SliderKompleks dataAdd={setData} />

@@ -35,13 +35,7 @@ function Yangiliklar() {
         >
           {t("news.title")}
         </Text>
-        <Text
-          fontSize={{ base: "18px", md: "22px", xl: "28px" }}
-          color="rgb(115, 114, 114)"
-          textAlign="center"
-        >
-          {t("news.desc")}
-        </Text>
+
         {arr.map((el) => (
           <Box
             key={el.id}
