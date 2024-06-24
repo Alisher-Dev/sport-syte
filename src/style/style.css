@@ -45,3 +45,7 @@
 .menuCarts:hover .iconSvg {
   fill: "#ffffff";
 }
+
+.textBorder:hover + .boxShadow {
+  background: red;
+}

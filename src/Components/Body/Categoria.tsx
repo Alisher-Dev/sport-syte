@@ -15,7 +15,7 @@ export default function Categoria() {
         fontFamily="Inter"
         fontWeight="600"
         m="50px 0"
-        fontSize="54px"
+        fontSize={{ base: "26px", md: "34px", lg: "46px", xl: "54px" }}
         textAlign="center"
       >
         {t("home.yaratish")}

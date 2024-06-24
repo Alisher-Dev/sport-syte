@@ -1,13 +1,15 @@
 import { ChangeEvent, useEffect, useState } from "react";
 import { Box, Container, Image, Select, Text } from "@chakra-ui/react";
 import Logo from "../../../public/logo.svg";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import BurgerMenu from "./BurgerMenu";
 import useLang from "../helpers/lang";
 
 export default function Header() {
   const [scrollY, setScrollY] = useState(0);
   const { changeLang, lang } = useLang();
+
+  const { pathname } = useLocation();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -63,7 +65,7 @@ export default function Header() {
         maxW="1500px"
       >
         <Link to="/">
-          <Image w="60px" h="60px" src={Logo} />
+          <Image w="60px" h="60px" src={Logo} alt="error in img" />
         </Link>
 
         <Box display="flex" alignItems="center" gap="20px">
@@ -74,12 +76,22 @@ export default function Header() {
             gap="25px"
           >
             {navbars.map((el) => (
-              <Link key={el.id} to={el.url}>
+              <Link
+                key={el.id}
+                to={el.url}
+                style={{
+                  color:
+                    pathname == el.url
+                      ? "rgba(0, 148, 255, 0.7)"
+                      : scrollY
+                      ? "rgb(96, 96, 96)"
+                      : "rgb(180, 180, 180)",
+                }}
+              >
                 <Text
                   fontSize={{ base: "14px", lg: "18px" }}
                   _hover={{ color: "rgba(0, 148, 255, 0.7)" }}
                   transition="all 0.2s ease"
-                  color={scrollY ? "rgb(96, 96, 96)" : "rgb(180, 180, 180)"}
                 >
                   {el.title}
                 </Text>

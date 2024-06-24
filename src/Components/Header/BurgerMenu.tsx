@@ -11,10 +11,11 @@ import {
   useDisclosure,
 } from "@chakra-ui/react";
 import Burger from "../../assets/icon/Burger.svg?react";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 
 function BurgerMenu() {
   const { isOpen, onOpen, onClose } = useDisclosure();
+  const { pathname } = useLocation();
   const navbar = [
     { id: 1, title: "HOME", url: "/" },
     { id: 2, title: "YRATILISH", url: "/yaratilish" },
@@ -41,12 +42,20 @@ function BurgerMenu() {
               gap="25px"
             >
               {navbar.map((el) => (
-                <Link key={el.id} to={el.url}>
+                <Link
+                  key={el.id}
+                  to={el.url}
+                  style={{
+                    color:
+                      pathname == el.url
+                        ? "rgba(0, 148, 255, 0.7)"
+                        : "rgb(96, 96, 96)",
+                  }}
+                >
                   <Text
                     fontSize="16px"
                     _hover={{ color: "rgba(0, 148, 255, 0.7)" }}
                     transition="all 0.2s ease"
-                    color="rgb(114, 114, 114)"
                   >
                     {el.title}
                   </Text>

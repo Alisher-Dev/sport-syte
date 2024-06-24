@@ -14,7 +14,7 @@
     "composite": true,
     "allowSyntheticDefaultImports": true,
     "esModuleInterop": true,
-    "module": "es6",
+    "module": "es2022",
     "moduleResolution": "node",
     "target": "es6",
     "strict": true

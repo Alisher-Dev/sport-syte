@@ -7,41 +7,18 @@ import { Yangiliklar } from "./Components/Yangiliklar/Yangiliklar";
 import Kompleks from "./Components/Kompleks/Kompleks";
 import Viloyatlar from "./Components/Viloyatlar/Viloyatlar";
 import Ustoz from "./Components/Viloyatlar/Ustoxlar/Ustoz";
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 import { Box } from "@chakra-ui/react";
 
 function App() {
   const { pathname } = useLocation();
-  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     document.documentElement.scrollTo({ top: 0 });
-    if (!loading) {
-      setLoading(true);
-    }
-    setTimeout(() => {
-      setLoading(false);
-    }, 2000);
   }, [pathname]);
 
   return (
     <>
-      {loading && (
-        <Box
-          w="100%"
-          zIndex="20"
-          h="100vh"
-          display="flex"
-          alignItems="center"
-          justifyContent="center"
-          position="fixed"
-          top="0"
-          left="0"
-          bg="white"
-        >
-          <iframe src="https://lottie.host/embed/7894d608-38ad-4d02-9470-9c4e9e5e86f2/AaOfL1Luva.json"></iframe>
-        </Box>
-      )}
       <Box position="relative">
         <Header />
         <Routes>

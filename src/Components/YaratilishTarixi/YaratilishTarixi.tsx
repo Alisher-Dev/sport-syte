@@ -39,7 +39,7 @@ function YaratilishTarixi() {
           />
           <Box>
             <Text
-              fontSize={{ base: "12px", md: "14px", lg: "16px", xl: "20px" }}
+              fontSize={{ base: "14px", lg: "16px", xl: "20px" }}
               fontWeight="600"
               color="rgb(115, 114, 114)"
             >
@@ -51,7 +51,7 @@ function YaratilishTarixi() {
               necessitatibus voluptate rem atque delectus autem omnis.
             </Text>
             <Text
-              fontSize={{ base: "12px", md: "14px", lg: "16px", xl: "20px" }}
+              fontSize={{ base: "14px", lg: "16px", xl: "20px" }}
               fontWeight="600"
               color="rgb(115, 114, 114)"
               mt="15px"
@@ -64,7 +64,7 @@ function YaratilishTarixi() {
               necessitatibus voluptate rem atque delectus autem omnis.
             </Text>
             <Text
-              fontSize={{ base: "12px", md: "14px", lg: "16px", xl: "20px" }}
+              fontSize={{ base: "14px", lg: "16px", xl: "20px" }}
               fontWeight="600"
               color="rgb(115, 114, 114)"
               mt="15px"
@@ -87,7 +87,7 @@ function YaratilishTarixi() {
         >
           <Box>
             <Text
-              fontSize={{ base: "12px", md: "14px", lg: "16px", xl: "20px" }}
+              fontSize={{ base: "14px", lg: "16px", xl: "20px" }}
               fontWeight="600"
               color="rgb(115, 114, 114)"
             >
@@ -99,7 +99,7 @@ function YaratilishTarixi() {
               necessitatibus voluptate rem atque delectus autem omnis.
             </Text>
             <Text
-              fontSize={{ base: "12px", md: "14px", lg: "16px", xl: "20px" }}
+              fontSize={{ base: "14px", lg: "16px", xl: "20px" }}
               fontWeight="600"
               color="rgb(115, 114, 114)"
               mt="15px"
@@ -112,7 +112,7 @@ function YaratilishTarixi() {
               necessitatibus voluptate rem atque delectus autem omnis.
             </Text>
             <Text
-              fontSize={{ base: "12px", md: "14px", lg: "16px", xl: "20px" }}
+              fontSize={{ base: "14px", lg: "16px", xl: "20px" }}
               fontWeight="600"
               color="rgb(115, 114, 114)"
               mt="15px"
