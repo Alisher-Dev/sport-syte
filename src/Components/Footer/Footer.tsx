@@ -5,6 +5,7 @@ import Instagram from "../../assets/icon/icons8-instagram.svg";
 import Youtube from "../../assets/icon/icons8-youtube.svg";
 import Facebook from "../../assets/icon/icons8-facebook.svg";
 import useLang from "../helpers/lang";
+import Logo from "/logo.svg";
 
 function Footer() {
   const { lang } = useLang();
@@ -41,11 +42,7 @@ function Footer() {
           flexWrap="wrap"
           justifyContent={{ base: "center", sm: "space-between" }}
         >
-          <Image
-            w={{ base: "50px", md: "70px" }}
-            src={"../../../public/logo.svg"}
-            alt="error"
-          />
+          <Image w={{ base: "50px", md: "70px" }} src={Logo} alt="error" />
           <Box
             as="nav"
             flexWrap="wrap"

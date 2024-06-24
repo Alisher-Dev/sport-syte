@@ -1,6 +1,6 @@
 import { ChangeEvent, useEffect, useState } from "react";
 import { Box, Container, Image, Select, Text } from "@chakra-ui/react";
-import Logo from "../../../public/logo.svg";
+import Logo from "/logo.svg";
 import { Link, useLocation } from "react-router-dom";
 import BurgerMenu from "./BurgerMenu";
 import useLang from "../helpers/lang";
