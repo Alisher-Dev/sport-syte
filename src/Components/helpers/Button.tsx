@@ -5,10 +5,10 @@ function Button(props: any) {
   return (
     <Box
       className="button"
-      w="130px"
       m="50px auto 0"
       display="flex"
-      justifyContent="space-between"
+      justifyContent="center"
+      gap="10px"
       alignItems="center"
     >
       <ButtonChakra

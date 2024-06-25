@@ -14,6 +14,9 @@
     "search": "qidirmoq",
     "searchValue": "Siz nimani izlayapsiz?"
   },
+  "teacher": {
+    "location": "joy topilmadi"
+  },
   "yaratish": {
     "title": "Yaratilish Tarixi",
     "desc": "Explore New place, food, culture around the world and many more",
@@ -26,11 +29,13 @@
   },
   "news": {
     "title": "Yangiliklar",
-    "desc": "Explore New place, food, culture around the world and many more"
+    "desc": "Explore New place, food, culture around the world and many more",
+    "button": "ko'proq yangiliklar"
   },
   "kompleks": {
     "title": "Kompleks mashklar",
-    "desc": "Explore New place, food, culture around the world and many more"
+    "desc": "Explore New place, food, culture around the world and many more",
+    "video": "video"
   },
   "viloyat": {
     "title": "Viloyatlar",

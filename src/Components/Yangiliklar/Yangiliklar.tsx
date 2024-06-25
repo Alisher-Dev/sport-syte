@@ -1,29 +1,26 @@
 import { Box, Container, Image, Text } from "@chakra-ui/react";
 import Button from "../helpers/Button";
 import useLang from "../helpers/lang";
+import { useEffect, useState } from "react";
+import axios from "axios";
 
 function Yangiliklar() {
-  const { t } = useLang();
-  const arr = [
-    {
-      id: 1,
-      desc: "O‘zbekiston Jang San’ati O‘zbekiston Respublikasi tayekvondo ITF Federatsiyasi Prezidenti, O‘zbekistonda xizmat ko‘rsatgan murabbiy, qora kamar 7 Dan Tayekwon-do sohibi, tajribali jang san’ati ustasi Po‘lat Usmonov, shuningdek, o‘zbek jang san’at federatsiyasi faxriy prezidenti Nasirova A.X. rahnamoligida ",
-      image:
-        "https://imgv3.fotor.com/images/blog-cover-image/Image-Upscaler-2.jpg",
-    },
-    {
-      id: 2,
-      desc: "O‘zbekiston Jang San’ati O‘zbekiston Respublikasi tayekvondo ITF Federatsiyasi Prezidenti, O‘zbekistonda xizmat ko‘rsatgan murabbiy, qora kamar 7 Dan Tayekwon-do sohibi, tajribali jang san’ati ustasi Po‘lat Usmonov, shuningdek, o‘zbek jang san’at federatsiyasi faxriy prezidenti Nasirova A.X. rahnamoligida ",
-      image:
-        "https://imgv3.fotor.com/images/blog-cover-image/Image-Upscaler-2.jpg",
-    },
-    {
-      id: 3,
-      desc: "O‘zbekiston Jang San’ati O‘zbekiston Respublikasi tayekvondo ITF Federatsiyasi Prezidenti, O‘zbekistonda xizmat ko‘rsatgan murabbiy, qora kamar 7 Dan Tayekwon-do sohibi, tajribali jang san’ati ustasi Po‘lat Usmonov, shuningdek, o‘zbek jang san’at federatsiyasi faxriy prezidenti Nasirova A.X. rahnamoligida ",
-      image:
-        "https://imgv3.fotor.com/images/blog-cover-image/Image-Upscaler-2.jpg",
-    },
-  ];
+  const { t, lang } = useLang();
+
+  const baseUrl = import.meta.env.VITE_BASE_URL;
+  const [Yangilik, setYangilik] = useState<IYangilik[]>([]);
+  const [error, setError] = useState(null || String);
+
+  useEffect(() => {
+    axios
+      .get(`${baseUrl}/news`)
+      .then((res) => [
+        setYangilik(res.data.data),
+        !res.data.data.length && setError("error"),
+      ])
+      .catch((e) => setError(e));
+  }, []);
+
   return (
     <Box mt="100px">
       <Container maxW="1500px" m="0 auto">
@@ -35,8 +32,7 @@ function Yangiliklar() {
         >
           {t("news.title")}
         </Text>
-
-        {arr.map((el) => (
+        {Yangilik.map((el) => (
           <Box
             key={el.id}
             border="1px solid rgba(0, 163, 255, 1)"
@@ -47,27 +43,52 @@ function Yangiliklar() {
             borderRadius="10px"
             overflow="hidden"
           >
-            <Image
-              src={el.image}
-              alt="error in img"
-              w={{ baser: "100%", lg: "50%" }}
-              objectFit="cover"
-              minH="200px"
-              maxH="400px"
-            />
-            <Text
-              w={{ baser: "100%", lg: "50%" }}
+            <Box w={{ base: "100%", lg: "50%" }}>
+              <Image
+                src={el.fileUrl}
+                alt="error in img"
+                w="100%"
+                objectFit="cover"
+                minH="200px"
+                maxH="400px"
+              />
+            </Box>
+            <Box
               p={{ base: "10px", lg: "30px 10px" }}
-              fontSize={{ base: "15px", md: "18px" }}
-              maxH={{ base: "250px", md: "400px" }}
-              overflow="auto"
-              color="rgba(115, 114, 114, 1)"
+              w={{ base: "100%", lg: "50%" }}
             >
-              {el.desc}
-            </Text>
+              <Text
+                fontSize={{ base: "15px", md: "18px" }}
+                maxH={{ base: "250px", md: "400px" }}
+                overflow="auto"
+                fontWeight="600"
+                color="rgba(115, 114, 114, 1)"
+              >
+                {lang === "uz" ? el.titleUz : el.titleRu}
+              </Text>
+              <Text
+                mt="20px"
+                fontSize={{ base: "15px", md: "18px" }}
+                maxH={{ base: "250px", md: "400px" }}
+                overflow="auto"
+                color="rgba(115, 114, 114, 1)"
+              >
+                {lang === "uz" ? el.contentUz : el.contentRu}
+              </Text>
+            </Box>
           </Box>
         ))}
-        <Button>more news</Button>
+        {error && (
+          <Text
+            fontSize={{ base: "18px", md: "22px", xl: "24px" }}
+            color="rgb(236, 56, 56)"
+            textAlign="center"
+            m="50px 0"
+          >
+            {t("Error")}
+          </Text>
+        )}
+        <Button>{t("news.button")}</Button>
       </Container>
     </Box>
   );

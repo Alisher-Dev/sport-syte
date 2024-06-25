@@ -67,7 +67,7 @@ function Kompleks() {
               allowFullScreen
             ></iframe>
           ) : (
-            <Text>Ютуб</Text>
+            <Text>{t("kompleks.video")}</Text>
           )}
         </Flex>
       </Container>

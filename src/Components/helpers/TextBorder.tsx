@@ -6,7 +6,13 @@ interface TypeText {
 
 function TextBorder(props: TypeText) {
   return (
-    <Box position="absolute" h="100px" className="textBorder" overflow="hidden">
+    <Box
+      position="absolute"
+      cursor="default"
+      h="100px"
+      className="textBorder"
+      overflow="hidden"
+    >
       <Text
         fontSize="65px"
         textAlign="center"

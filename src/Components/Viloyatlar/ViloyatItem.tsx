@@ -4,6 +4,7 @@ import { useNavigate } from "react-router-dom";
 
 interface TypeViloyatItem {
   image: string;
+  id: number;
   titleRu: string;
   titleUz: string;
 }
@@ -19,7 +20,7 @@ function ViloyatItem(props: TypeViloyatItem) {
         overflow="hidden"
         bg="rgb(214, 214, 214)"
         minH="300px"
-        onClick={() => navigate(`/viloyat/${1}`)}
+        onClick={() => navigate(`/viloyat/${props.id}`)}
         display="flex"
         alignItems="center"
         justifyContent="center"
@@ -29,6 +30,9 @@ function ViloyatItem(props: TypeViloyatItem) {
           h="100%"
           w="100%"
           position="absolute"
+          display="flex"
+          alignItems="center"
+          justifyContent="center"
           top="0"
           _hover={{ bgPosition: "100% 100%" }}
           left="0"
@@ -37,9 +41,10 @@ function ViloyatItem(props: TypeViloyatItem) {
           bgSize="100% 150%"
           bgGradient="linear(to-b, rgba(153, 153, 153, 0), rgba(0, 148, 255, 0.3), rgba(0, 148, 255, 1))"
           transition="all 0.4s ease"
-        ></Box>
+        >
+          <TextBorder text={props.titleUz} />
+        </Box>
         {!props.titleUz && <Spinner w="30px" h="30px" />}
-        <TextBorder text={props.titleUz} />
         <Image
           w="100%"
           objectFit="cover"

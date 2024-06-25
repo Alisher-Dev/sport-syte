@@ -7,12 +7,15 @@ import axios from "axios";
 function Viloyatlar() {
   const baseUrl = import.meta.env.VITE_BASE_URL;
   const [Region, setRegion] = useState<IRegion[]>([]);
-  const [error, setError] = useState(null);
+  const [error, setError] = useState(null || String);
 
   useEffect(() => {
     axios
       .get(`${baseUrl}/region`)
-      .then((res) => setRegion(res.data.data))
+      .then((res) => [
+        setRegion(res.data.data),
+        !res.data.data.length && setError("error"),
+      ])
       .catch((e) => setError(e));
   }, []);
 
@@ -28,8 +31,7 @@ function Viloyatlar() {
         >
           {t("viloyat.title")}
         </Text>
-
-        {!Region[0] && !error && (
+        {!Region.length && !error && (
           <Spinner m="100px auto 0" w="50px" h="50px" display="block" />
         )}
         <Grid
@@ -43,6 +45,7 @@ function Viloyatlar() {
           {Region.map((el) => (
             <ViloyatItem
               key={el.id}
+              id={el.id}
               titleRu={el.titleRu}
               titleUz={el.titleUz}
               image={el.image}
