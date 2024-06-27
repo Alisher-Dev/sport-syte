@@ -64,7 +64,7 @@ function UstozItem(props: UserItem) {
             <Spinner w="50px" h="50px" />
           </Box>
         )}
-        <Box w="50%">
+        <Box w="100%">
           <Text fontSize="20px" fontWeight="600" color="rgb(44, 44, 44)">
             {lang === "uz"
               ? props.data.titleTeacherUz

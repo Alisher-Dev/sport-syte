@@ -9,6 +9,10 @@ import Viloyatlar from "./Components/Viloyatlar/Viloyatlar";
 import Ustoz from "./Components/Viloyatlar/Ustoxlar/Ustoz";
 import { useEffect } from "react";
 import { Box } from "@chakra-ui/react";
+import Errors from "./Components/Error/Error";
+import AdminMain from "./Components/Admin/AdminMain";
+import Login from "./Components/Admin/Auth/Login";
+import Signup from "./Components/Admin/Auth/Signup";
 
 function App() {
   const { pathname } = useLocation();
@@ -28,6 +32,10 @@ function App() {
           <Route path="/kompleks" element={<Kompleks />} />
           <Route path="/viloyat" element={<Viloyatlar />} />
           <Route path="/viloyat/:id" element={<Ustoz />} />
+          <Route path="/admin" element={<AdminMain />} />
+          <Route path="/admin/login" element={<Login />} />
+          <Route path="/admin/signup" element={<Signup />} />
+          <Route path="*" element={<Errors />} />
         </Routes>
         <Footer />
       </Box>

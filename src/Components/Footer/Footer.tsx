@@ -16,7 +16,7 @@ function Footer() {
     { id: 1, title: "UY", url: "/" },
     { id: 2, title: "YARATILISH", url: "/yaratilish" },
     { id: 3, title: "YANGILIK", url: "/yangilik" },
-    { id: 4, title: "KOMPLECS", url: "/kompleks" },
+    { id: 4, title: "KOMPLEKS", url: "/kompleks" },
     { id: 5, title: "VILOYATLAR", url: "/viloyat" },
   ];
 
