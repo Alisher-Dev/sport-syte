@@ -4,6 +4,8 @@ import Button from "../../helpers/Button";
 import { useState } from "react";
 import Eye from "../../../assets/icon/eye-password-hide-svgrepo-com.svg?react";
 import useLang from "../../helpers/lang";
+import { useNavigate } from "react-router-dom";
+import axios from "axios";
 
 interface IFormData {
   email: string;
@@ -12,6 +14,10 @@ interface IFormData {
 
 function Login() {
   const { t } = useLang();
+  const navigate = useNavigate();
+  const baseUrl = import.meta.env.VITE_BASE_URL;
+  const UserName = localStorage.getItem("username");
+  const UserPassword = localStorage.getItem("password");
   const [passwordWe, setPasswordWe] = useState(true);
 
   const Validate = (el: any) => {
@@ -23,15 +29,25 @@ function Login() {
   };
 
   const initialValue: IFormData = {
-    email: "",
-    password: "",
+    email: UserName || "",
+    password: UserPassword || "",
   };
 
   return (
     <Formik
       initialValues={initialValue}
       onSubmit={(el) => {
-        console.log(el);
+        axios
+          .post(baseUrl + "/auth/login", {
+            usernameOrEmail: el.email,
+            password: el.password,
+          })
+          .then((res) => [
+            localStorage.setItem("accessToken", res.data.data.accessToken),
+            localStorage.setItem("refreshToken", res.data.data.refreshToken),
+            navigate("/admin"),
+          ])
+          .catch((e) => console.error(e));
       }}
     >
       {({ errors, touched }) => (
@@ -108,9 +124,23 @@ function Login() {
                 </Text>
               )}
             </Box>
-            <Button type="submit" variante="default">
-              send
-            </Button>
+            <Box
+              display="flex"
+              alignItems="center"
+              justifyContent="space-between"
+            >
+              <Button type="submit" variante="default">
+                {t("Admin.kirish")}
+              </Button>
+              <Button
+                fontSize="14px"
+                m="0"
+                link="/admin/signup"
+                variante="link"
+              >
+                {t("Admin.signup")}
+              </Button>
+            </Box>
           </Box>
         </Form>
       )}

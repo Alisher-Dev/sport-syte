@@ -1,8 +1,12 @@
 {
   "Error": "serverda yoki internetda xatolik yuz berdi, internet ulanishingizni tekshiring!",
   "Error_page": "Bu sahifa mavjud emas",
+  "save": "saqlash",
   "Admin": {
-    "title": "Admin"
+    "title": "Admin",
+    "Login": "tizimga kirish",
+    "kirish": "kirish",
+    "signup": "Ro'yxatdan o'tish"
   },
   "home": {
     "title": "2009 YIL DEKABR OYIDA MADANIYAT VA SPORT ISHLARI VAZIRLIGI TOMONIDAN O‘ZBEK JANG SAN’AT SPORTIGA O‘ZBEKISTON MILLIY SPORT TURI MAQOMI BERILDI.",
@@ -45,6 +49,8 @@
     "title": "Viloyatlar",
     "desc": "Explore New place, food, culture around the world and many more",
     "tiche": "Ustoz",
-    "tichedesc": "O'qituvchi haqida"
+    "tichedesc": "O'qituvchi haqida",
+    "button": "Yo'pish",
+    "create": "Viloyat yarating"
   }
 }

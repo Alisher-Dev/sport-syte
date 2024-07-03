@@ -8,7 +8,6 @@ import useLang from "../helpers/lang";
 export default function Header() {
   const [scrollY, setScrollY] = useState(0);
   const { changeLang, lang } = useLang();
-
   const { pathname } = useLocation();
 
   useEffect(() => {

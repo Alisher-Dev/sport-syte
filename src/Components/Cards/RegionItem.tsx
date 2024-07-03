@@ -13,15 +13,21 @@ import {
   useDisclosure,
   Text,
 } from "@chakra-ui/react";
+import useLang from "../helpers/lang";
 
 interface CardProps {
-  title: string;
-  imageUrl: string;
-  content?: string;
+  titleUz: string;
+  titleRu: string;
+  imageUrl: any;
+  descUz: string;
+  descRu: string;
 }
 
-const Card: React.FC<CardProps> = ({ title, content, imageUrl }: CardProps) => {
+const Card: React.FC<CardProps> = (props: CardProps) => {
   const { isOpen, onOpen, onClose } = useDisclosure();
+  const { lang, t } = useLang();
+
+  console.log();
 
   return (
     <>
@@ -40,7 +46,7 @@ const Card: React.FC<CardProps> = ({ title, content, imageUrl }: CardProps) => {
           borderRadius="10px"
           w="100%"
           h="100%"
-          src={imageUrl}
+          src={String(props.imageUrl)}
           objectFit="cover"
           alt="Card"
         />
@@ -49,15 +55,19 @@ const Card: React.FC<CardProps> = ({ title, content, imageUrl }: CardProps) => {
       <Modal isOpen={isOpen} onClose={onClose}>
         <ModalOverlay />
         <ModalContent maxW="1000px">
-          <ModalHeader>{title}</ModalHeader>
+          <ModalHeader>
+            {lang === "uz" ? props.titleUz : props.titleRu}
+          </ModalHeader>
           <ModalCloseButton />
           <ModalBody display="flex">
-            <Text w="1800px">{content}</Text>
+            <Text w="1800px">
+              {lang === "uz" ? props.descUz : props.descRu}
+            </Text>
           </ModalBody>
 
           <ModalFooter>
             <Button colorScheme="blue" mr={3} onClick={onClose}>
-              Close
+              {t("viloyat.button")}
             </Button>
           </ModalFooter>
         </ModalContent>

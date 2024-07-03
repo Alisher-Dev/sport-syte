@@ -3,24 +3,40 @@ import { Field, Form, Formik } from "formik";
 import Button from "../../helpers/Button";
 import { useState } from "react";
 import Eye from "../../../assets/icon/eye-password-hide-svgrepo-com.svg?react";
+import useLang from "../../helpers/lang";
+import axios from "axios";
+import { useNavigate } from "react-router-dom";
 
 interface IFormData {
+  username: string;
   email: string;
   password: string;
 }
 
 function Signup() {
+  const { t } = useLang();
+  const baseUrl = import.meta.env.VITE_BASE_URL;
   const [passwordWe, setPasswordWe] = useState(true);
+  const navigate = useNavigate();
+  const emailValid =
+    /^(([^<>()[\]\.,;:\s@\"]+(\.[^<>()[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i;
 
   const Validate = (el: any) => {
     if (el.length < 3) {
-      return "title kaminda 3ta harif";
+      return "title kaminda 3ta harif bolishi kerak";
     } else if (!el.length) {
       return "title bosh";
     }
   };
 
+  const EmailValidate = (email: string) => {
+    if (!emailValid.test(email)) {
+      return "email emas";
+    }
+  };
+
   const initialValue: IFormData = {
+    username: "",
     email: "",
     password: "",
   };
@@ -29,30 +45,65 @@ function Signup() {
     <Formik
       initialValues={initialValue}
       onSubmit={(el) => {
-        console.log(el);
+        axios
+          .post(baseUrl + "/user", {
+            username: el.username,
+            email: el.email,
+            password: el.password,
+          })
+          .then(() => [
+            localStorage.setItem("username", el.username),
+            localStorage.setItem("password", el.password),
+            navigate("/admin/login"),
+          ])
+          .catch((e) => console.error(e));
       }}
     >
       {({ errors, touched }) => (
         <Form>
           <Box
-            mt="100px"
             maxW="700px"
             minW="300px"
-            m="0 auto"
+            m="100px auto 0"
             borderRadius="5px"
             border="1px solid gray"
             p="20px"
             display="grid"
             gap="20px"
           >
+            <Text
+              fontSize={{ base: "28px", md: "32px", lg: "40px", xl: "48px" }}
+              textAlign="center"
+              color="rgb(72, 72, 72)"
+              fontWeight="600"
+            >
+              {t("Admin.signup")}
+            </Text>
             <Box>
               <Field
                 type="text"
                 as={Input}
                 variant="unset"
                 bg="rgb(232,240,254)"
-                placeholder="Username or Email"
+                placeholder="username"
                 validate={Validate}
+                id="username"
+                name="username"
+              />
+              {errors.username && touched.username && (
+                <Text color="tomato" fontSize="14px">
+                  {errors.username}
+                </Text>
+              )}
+            </Box>
+            <Box>
+              <Field
+                type="email"
+                as={Input}
+                variant="unset"
+                bg="rgb(232,240,254)"
+                placeholder="email"
+                validate={EmailValidate}
                 id="email"
                 name="email"
               />
@@ -99,9 +150,18 @@ function Signup() {
                 </Text>
               )}
             </Box>
-            <Button type="submit" variante="default">
-              send
-            </Button>
+            <Box
+              display="flex"
+              alignItems="center"
+              justifyContent="space-between"
+            >
+              <Button type="submit" variante="default">
+                {t("Admin.kirish")}
+              </Button>
+              <Button fontSize="14px" m="0" link="/admin/login" variante="link">
+                {t("Admin.kirish")}
+              </Button>
+            </Box>
           </Box>
         </Form>
       )}

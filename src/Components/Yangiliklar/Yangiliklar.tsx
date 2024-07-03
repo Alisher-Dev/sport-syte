@@ -6,20 +6,20 @@ import axios from "axios";
 
 function Yangiliklar() {
   const { t, lang } = useLang();
-
+  const [limit, setLimit] = useState(3);
   const baseUrl = import.meta.env.VITE_BASE_URL;
   const [Yangilik, setYangilik] = useState<IYangilik[]>([]);
   const [error, setError] = useState(null || String);
 
   useEffect(() => {
     axios
-      .get(`${baseUrl}/news`)
+      .get(`${baseUrl}/news/?limit=${limit}`)
       .then((res) => [
         setYangilik(res.data.data),
         !res.data.data.length && setError("error"),
       ])
       .catch((e) => setError(e));
-  }, []);
+  }, [limit]);
 
   return (
     <Box mt="100px">
@@ -88,7 +88,11 @@ function Yangiliklar() {
             {t("Error")}
           </Text>
         )}
-        <Button>{t("news.button")}</Button>
+        <Box display={limit > Yangilik.length ? "none" : "flex"}>
+          <Button onClick={() => setLimit((res) => res + 3)}>
+            {t("news.button")}
+          </Button>
+        </Box>
       </Container>
     </Box>
   );

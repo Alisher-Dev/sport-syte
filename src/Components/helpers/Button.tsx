@@ -42,7 +42,7 @@ function Button(props: ITypeButton) {
         p="10px 30px"
         fontWeight="300"
         mr="auto"
-        bg="rgb(232,240,254)"
+        bg="rgb(231, 236, 245)"
         fontSize="16px"
         color="#1f1f1f"
         {...props}
