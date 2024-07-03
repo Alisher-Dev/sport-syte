@@ -43,8 +43,8 @@ function Login() {
             password: el.password,
           })
           .then((res) => [
-            localStorage.setItem("accessToken", res.data.data.accessToken),
-            localStorage.setItem("refreshToken", res.data.data.refreshToken),
+            sessionStorage.setItem("accessToken", res.data.data.accessToken),
+            sessionStorage.setItem("refreshToken", res.data.data.refreshToken),
             navigate("/admin"),
           ])
           .catch((e) => console.error(e));

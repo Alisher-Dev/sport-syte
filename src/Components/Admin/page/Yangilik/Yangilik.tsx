@@ -4,13 +4,23 @@ import { useEffect, useState } from "react";
 import axios from "axios";
 import MenuDrawer from "./MenuDrawerYangilik";
 import Trash from "../../../../assets/icon/trash-can-with-cover-svgrepo-com.svg?react";
+import { useNavigate } from "react-router-dom";
 
 function YangilikAdmin() {
   const { t, lang } = useLang();
   const baseUrl = import.meta.env.VITE_BASE_URL;
   const [Yangilik, setYangilik] = useState<IYangilik[]>([]);
-  const [error, setError] = useState(null || String);
-  const Token = localStorage.getItem("accessToken");
+  const Token = sessionStorage.getItem("accessToken");
+  const [error, setError] = useState<any>();
+  const [data, setData] = useState([]);
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    if (error?.response.status === 401) {
+      sessionStorage.removeItem("accessToken");
+      navigate("/admin/login");
+    }
+  }, [error]);
 
   const RemoveYangilik = (id: number | undefined) => {
     if (id) {
@@ -18,7 +28,9 @@ function YangilikAdmin() {
         url: baseUrl + `/news/${id}`,
         method: "DELETE",
         headers: { Authorization: `Bearer ${Token}` },
-      });
+      })
+        .then((res) => setData(res.data))
+        .catch((e) => setError(e));
     }
   };
 
@@ -30,7 +42,7 @@ function YangilikAdmin() {
         !res.data.data.length && setError("error"),
       ])
       .catch((e) => setError(e));
-  }, []);
+  }, [data]);
 
   return (
     <Box w="100%">

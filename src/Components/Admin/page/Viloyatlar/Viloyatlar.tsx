@@ -4,13 +4,24 @@ import { useEffect, useState } from "react";
 import axios from "axios";
 import Trash from "../../../../assets/icon/trash-can-with-cover-svgrepo-com.svg?react";
 import MenuDrawer from "./MenuDrawerViloyat";
+import { useNavigate } from "react-router-dom";
+import TeacherDrower from "./TeacherDrower";
 
 function ViloyatAdmin() {
   const { t, lang } = useLang();
   const baseUrl = import.meta.env.VITE_BASE_URL;
   const [Viloyat, setViloyat] = useState<IRegion[]>([]);
-  const [error, setError] = useState(null || String);
-  const Token = localStorage.getItem("accessToken");
+  const Token = sessionStorage.getItem("accessToken");
+  const [data, setData] = useState([]);
+  const [error, setError] = useState<any>();
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    if (error?.response.status === 401) {
+      sessionStorage.removeItem("accessToken");
+      navigate("/admin/login");
+    }
+  }, [error]);
 
   useEffect(() => {
     axios
@@ -20,7 +31,7 @@ function ViloyatAdmin() {
         !res.data.data.length && setError("error"),
       ])
       .catch((e) => setError(e));
-  }, []);
+  }, [data]);
 
   const RemoveYangilik = (id: number | undefined) => {
     if (id) {
@@ -28,7 +39,9 @@ function ViloyatAdmin() {
         url: baseUrl + `/region/${id}`,
         method: "DELETE",
         headers: { Authorization: `Bearer ${Token}` },
-      }).catch((e) => setError(e));
+      })
+        .then((res) => setData(res.data))
+        .catch((e) => setError(e));
     }
   };
   return (
@@ -74,9 +87,12 @@ function ViloyatAdmin() {
               bg="rgb(240, 240, 240)"
               borderRadius="5px"
               zIndex="2"
+              display="flex"
+              gap="20px"
               cursor="pointer"
             >
               <Trash onClick={() => RemoveYangilik(el.id)} />
+              <TeacherDrower id={el.id!} />
             </Box>
             <Box w="100%" h="80%">
               <Image

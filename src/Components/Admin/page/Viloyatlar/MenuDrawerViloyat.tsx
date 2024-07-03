@@ -14,16 +14,26 @@ import Burger from "../../../../assets/icon/Burger.svg?react";
 import Button from "../../../helpers/Button";
 import { Field, Form, Formik } from "formik";
 import FileInput from "../../../helpers/file";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import axios from "axios";
 import useLang from "../../../helpers/lang";
+import { useNavigate } from "react-router-dom";
 
 function MenuDrawer() {
   const { isOpen, onOpen, onClose } = useDisclosure();
   const [images, setImages] = useState("");
   const baseUrl = import.meta.env.VITE_BASE_URL;
-  const Token = localStorage.getItem("accessToken");
+  const Token = sessionStorage.getItem("accessToken");
   const { t } = useLang();
+  const [error, setError] = useState<any>();
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    if (error?.response.status === 401) {
+      sessionStorage.removeItem("accessToken");
+      navigate("/admin/login");
+    }
+  }, [error]);
 
   const Validate = (value: any) => {
     if (!value) {
@@ -53,7 +63,7 @@ function MenuDrawer() {
       method: "POST",
       data: { ...data, image: images },
       headers: { Authorization: `Bearer ${Token}` },
-    });
+    }).catch((e) => setError(e));
   };
 
   return (

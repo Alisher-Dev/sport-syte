@@ -10,19 +10,21 @@ import {
   Text,
   useDisclosure,
 } from "@chakra-ui/react";
-import Burger from "../../../../assets/icon/Burger.svg?react";
+import Teacher from "../../../../assets/icon/user-icon-svgrepo-com.svg?react";
 import Button from "../../../helpers/Button";
 import { Field, Form, Formik } from "formik";
 import FileInput from "../../../helpers/file";
 import { useEffect, useState } from "react";
 import axios from "axios";
+import useLang from "../../../helpers/lang";
 import { useNavigate } from "react-router-dom";
 
-function MenuDrawer() {
+function TeacherDrower(props: { id: number }) {
   const { isOpen, onOpen, onClose } = useDisclosure();
   const [images, setImages] = useState("");
   const baseUrl = import.meta.env.VITE_BASE_URL;
   const Token = sessionStorage.getItem("accessToken");
+  const { t } = useLang();
   const [error, setError] = useState<any>();
   const navigate = useNavigate();
 
@@ -41,33 +43,34 @@ function MenuDrawer() {
     }
   };
 
-  const initValue: IYangilik = {
-    contentRu: "",
-    contentUz: "",
-    fileUrl: "",
-    titleRu: "",
-    titleUz: "",
+  const initValue: IRegionProps = {
+    descTeacherRu: "",
+    descTeacherUz: "",
+    titleTeacherRu: "",
+    titleTeacherUz: "",
+    teacherLocation: "",
+    teacherImg: "",
   };
 
-  const AddYangilik = (data: IYangilik) => {
+  const AddYangilik = (data: IRegionProps) => {
     axios({
-      url: baseUrl + "/news",
-      method: "POST",
-      data: { ...data, fileUrl: images },
+      url: baseUrl + `/region/${props.id}`,
+      method: "PATCH",
+      data: { ...data, teacherImg: images },
       headers: { Authorization: `Bearer ${Token}` },
     }).catch((e) => setError(e));
   };
 
   return (
     <>
-      <Button variante="default" p="10px" m="0" onClick={onOpen}>
-        <Burger width="25px" height="25px" />
-      </Button>
+      <Box p="0px" m="0" onClick={onOpen}>
+        <Teacher width="20px" height="20px" />
+      </Box>
       <Drawer isOpen={isOpen} placement="right" size="md" onClose={onClose}>
         <DrawerOverlay />
         <DrawerContent>
           <DrawerCloseButton />
-          <DrawerHeader>Create Yangilik</DrawerHeader>
+          <DrawerHeader>{t("viloyat.CreatTiche")}</DrawerHeader>
 
           <DrawerBody>
             <Box>
@@ -82,13 +85,13 @@ function MenuDrawer() {
                         <Field
                           as={Input}
                           validate={Validate}
-                          id="titleUz"
-                          name="titleUz"
-                          placeholder="titleUz"
+                          id="titleTeacherUz"
+                          name="titleTeacherUz"
+                          placeholder="titleTeacherUz"
                         />
-                        {errors.titleUz && touched.titleUz && (
+                        {errors.titleTeacherUz && touched.titleTeacherUz && (
                           <Text color="tomato" fontSize="14px">
-                            {errors.titleUz}
+                            {errors.titleTeacherUz}
                           </Text>
                         )}
                       </Box>
@@ -96,13 +99,13 @@ function MenuDrawer() {
                         <Field
                           as={Input}
                           validate={Validate}
-                          id="titleRu"
-                          name="titleRu"
-                          placeholder="titleRu"
+                          id="titleTeacherRu"
+                          name="titleTeacherRu"
+                          placeholder="titleTeacherRu"
                         />
-                        {errors.titleRu && touched.titleRu && (
+                        {errors.titleTeacherRu && touched.titleTeacherRu && (
                           <Text color="tomato" fontSize="14px">
-                            {errors.titleRu}
+                            {errors.titleTeacherRu}
                           </Text>
                         )}
                       </Box>
@@ -111,13 +114,13 @@ function MenuDrawer() {
                         <Field
                           as={Input}
                           validate={Validate}
-                          id="contentUz"
-                          name="contentUz"
-                          placeholder="contentUz"
+                          id="descTeacherRu"
+                          name="descTeacherRu"
+                          placeholder="descTeacherRu"
                         />
-                        {errors.contentUz && touched.contentUz && (
+                        {errors.descTeacherRu && touched.descTeacherRu && (
                           <Text color="tomato" fontSize="14px">
-                            {errors.contentUz}
+                            {errors.descTeacherRu}
                           </Text>
                         )}
                       </Box>
@@ -126,25 +129,43 @@ function MenuDrawer() {
                         <Field
                           as={Input}
                           validate={Validate}
-                          id="contentRu"
-                          name="contentRu"
-                          placeholder="contentRu"
+                          id="descTeacherUz"
+                          name="descTeacherUz"
+                          placeholder="descTeacherUz"
                         />
-                        {errors.contentRu && touched.contentRu && (
+                        {errors.descTeacherUz && touched.descTeacherUz && (
                           <Text color="tomato" fontSize="14px">
-                            {errors.contentRu}
+                            {errors.descTeacherUz}
                           </Text>
                         )}
                       </Box>
 
-                      <FileInput setIcons={setImages} />
+                      <Box>
+                        <Field
+                          as={Input}
+                          validate={Validate}
+                          id="teacherLocation"
+                          name="teacherLocation"
+                          placeholder="teacherLocation"
+                        />
+                        {errors.teacherLocation && touched.teacherLocation && (
+                          <Text color="tomato" fontSize="14px">
+                            {errors.teacherLocation}
+                          </Text>
+                        )}
+                      </Box>
+
+                      <Box>
+                        <Text color="rgb(92, 92, 92)">Image</Text>
+                        <FileInput setIcons={setImages} />
+                      </Box>
 
                       <Button
-                        onClick={() => console.log("click")}
                         variante="default"
+                        onClick={() => console.log("click")}
                         type="submit"
                       >
-                        save
+                        {t("save")}
                       </Button>
                     </Box>
                   </Form>
@@ -158,4 +179,4 @@ function MenuDrawer() {
   );
 }
 
-export default MenuDrawer;
+export default TeacherDrower;

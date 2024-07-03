@@ -7,7 +7,7 @@ import ViloyatAdmin from "./page/Viloyatlar/Viloyatlar";
 
 function AdminMain() {
   const { t, lang } = useLang();
-  const Token = localStorage.getItem("accessToken");
+  const Token = sessionStorage.getItem("accessToken");
   const navigate = useNavigate();
 
   useEffect(() => {
