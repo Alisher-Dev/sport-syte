@@ -1,4 +1,4 @@
-import { Box, Container, Image, Text } from "@chakra-ui/react";
+import { Box, Container, Image, Spinner, Text } from "@chakra-ui/react";
 import Button from "../helpers/Button";
 import useLang from "../helpers/lang";
 import { useEffect, useState } from "react";
@@ -32,6 +32,9 @@ function Yangiliklar() {
         >
           {t("news.title")}
         </Text>
+        {!Yangilik.length && !error && (
+          <Spinner m="100px auto 0" w="50px" h="50px" display="block" />
+        )}
         {Yangilik.map((el) => (
           <Box
             key={el.id}

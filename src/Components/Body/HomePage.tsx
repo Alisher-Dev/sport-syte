@@ -1,6 +1,5 @@
 import { Box, Container, Image, Text } from "@chakra-ui/react";
 import Fon from "../../assets/image/fone.png";
-import Search from "./Search";
 import Categoria from "./Categoria";
 import TarixiyJoylar from "./TarixiyJoylar";
 import useLang from "../helpers/lang";
@@ -14,13 +13,14 @@ export default function HomePage() {
         alignItems="center"
         position="relative"
         overflow="hidden"
-        p="50px 0"
+        p="150px 0"
       >
         <Image
           objectFit="cover"
           w="100%"
           h="100%"
           zIndex="-1"
+          loading="lazy"
           position="absolute"
           src={Fon}
         />
@@ -35,7 +35,6 @@ export default function HomePage() {
           >
             {t("home.title")}
           </Text>
-          <Search />
         </Container>
       </Box>
 

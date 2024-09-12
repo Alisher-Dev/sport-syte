@@ -22,6 +22,7 @@ function YaratilishTarixi() {
           gap="18px"
         >
           <Image
+            loading="lazy"
             src="https://www.tourprom.ru/site_media/images/upload/2021/8/28/pressreleasephoto/ozbek-jang-sanati-0-0-0-0-1629875866.jpg"
             alt="error in image"
             w={{ base: "100%", lg: "50%" }}
@@ -90,6 +91,7 @@ function YaratilishTarixi() {
             </Text>
           </Box>
           <Image
+            loading="lazy"
             src="https://olamsport.com/upload/storage/60728_680.jpg"
             alt="error in image"
             w={{ base: "100%", lg: "50%" }}
@@ -99,6 +101,7 @@ function YaratilishTarixi() {
           />
         </Box>
         <Image
+          loading="lazy"
           src="https://sports.uz/source/Almurat-2018/Ozbek-jang-sanati/Ozbek-jang%20(4).jpg"
           w="100%"
           minH="250px"

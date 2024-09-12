@@ -45,7 +45,7 @@ function Viloyatlar() {
           {Region.map((el) => (
             <ViloyatItem
               key={el.id}
-              id={el.id}
+              id={el.id!}
               titleRu={el.titleRu}
               titleUz={el.titleUz}
               image={el.image}
